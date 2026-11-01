@@ -1,0 +1,50 @@
+# СтрAIтег: один каталог сайта обслуживает два поддомена.
+#   factory.straitegist.ru  -> index.html          (производства)
+#   vendors.straitegist.ru  -> vendors/index.html  (вендоры и интеграторы)
+# Нужен Apache с mod_rewrite (стандарт на Beget, Timeweb, REG.RU и т.п.).
+# Для nginx см. README.md.
+
+DirectoryIndex index.html
+Options -Indexes
+AddDefaultCharset utf-8
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# HTTP -> HTTPS. Лучше включить в панели хостинга вместе с SSL-сертификатом.
+# Если в панели такой опции нет, раскомментируйте 3 строки ниже.
+# RewriteCond %{HTTPS} off
+# RewriteCond %{HTTP:X-Forwarded-Proto} !https
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# www.factory / www.vendors -> без www
+RewriteCond %{HTTP_HOST} ^www\.(factory|vendors)\.straitegist\.ru$ [NC]
+RewriteRule ^ https://%1.straitegist.ru%{REQUEST_URI} [R=301,L]
+
+# Старый адрес /vendors/ на factory -> vendors.straitegist.ru
+RewriteCond %{HTTP_HOST} !^vendors\. [NC]
+RewriteCond %{THE_REQUEST} \s/vendors(/[^\s?]*)?[\s?]
+RewriteRule ^vendors(/.*)?$ https://vendors.straitegist.ru/ [R=301,L]
+
+# vendors.straitegist.ru/vendors/ -> корень
+RewriteCond %{HTTP_HOST} ^vendors\. [NC]
+RewriteCond %{THE_REQUEST} \s/vendors(/[^\s?]*)?[\s?]
+RewriteRule ^vendors(/.*)?$ https://vendors.straitegist.ru/ [R=301,L]
+
+# vendors.straitegist.ru: корень, robots и sitemap берём из своих файлов
+RewriteCond %{HTTP_HOST} ^vendors\. [NC]
+RewriteRule ^$ vendors/index.html [L]
+RewriteCond %{HTTP_HOST} ^vendors\. [NC]
+RewriteRule ^robots\.txt$ robots-vendors.txt [L]
+RewriteCond %{HTTP_HOST} ^vendors\. [NC]
+RewriteRule ^sitemap\.xml$ sitemap-vendors.xml [L]
+
+# Служебные файлы сайта наружу не отдаём
+RewriteRule ^(README\.md|\.git(/.*)?|\.gitignore)$ - [F,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(woff2|svg|png|css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>

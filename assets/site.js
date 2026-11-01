@@ -5,9 +5,9 @@
 
   /* ===================== CONFIG ===================== */
   var CONFIG = {
-    // Куда отправлять заявки (POST, JSON). Готовый обработчик: /api/lead.php
-    // Можно указать webhook amoCRM / Bitrix24 / n8n напрямую.
-    FORM_ENDPOINT: "/api/lead.php",
+    // Куда отправлять заявки (POST, JSON): webhook n8n, workflow «СтрAIтег: заявки с сайта → Telegram»
+    // n8n сам отправляет заявку в Telegram. Разрешённые источники (CORS) заданы в узле Webhook.
+    FORM_ENDPOINT: "https://demetrax.ru/webhook/straitegist-lead",
     // Номер счётчика Яндекс.Метрики задаётся в <head> каждой страницы: window.YM_ID
     METRIKA_ID: window.YM_ID || 0,
     // Запасной адрес, если отправка не удалась
@@ -74,13 +74,13 @@
   };
 
   var VENDOR = {
-    press: { label: "Ткань в пресс", text: PLANT.press.text, params: PLANT.press.params,
+    press: { label: "Ткань в пресс", src: "Клиент, которого привёл СтрAIтег · описание задачи", text: PLANT.press.text, params: PLANT.press.params,
       opts: [["SCARA, 6 кг, вылет 600 мм","±0,02 мм, 4 оси, вакуумный захват",94,true],["Дельта-робот, 3 кг","Альтернатива другого производителя",71,false]],
       cost: PLANT.press.cost, time: PLANT.press.time, pay: PLANT.press.pay },
-    pallet: { label: "Паллетизация мешков", text: PLANT.pallet.text, params: PLANT.pallet.params,
+    pallet: { label: "Паллетизация мешков", src: "Ваш клиент · письмо на почту отдела продаж", text: PLANT.pallet.text, params: PLANT.pallet.params,
       opts: [["Робот-паллетайзер, 70 кг","Вылет 2 180 мм, 6 осей, IP54",91,true],["Робот 120 кг, вылет 2 900 мм","Альтернатива другого производителя",84,false]],
       cost: PLANT.pallet.cost, time: PLANT.pallet.time, pay: PLANT.pallet.pay },
-    cnc: { label: "Загрузка станка ЧПУ", text: PLANT.cnc.text, params: PLANT.cnc.params,
+    cnc: { label: "Загрузка станка ЧПУ", src: "Ваш клиент · запрос с сайта", text: PLANT.cnc.text, params: PLANT.cnc.params,
       opts: [["Коллаборативный робот, 10–12 кг","Без ограждения, двойной захват",88,true],["Промышленный 6-осевой, 12–20 кг","Альтернатива другого производителя",81,false]],
       cost: PLANT.cnc.cost, time: PLANT.cnc.time, pay: PLANT.cnc.pay }
   };
@@ -148,9 +148,9 @@
 
   function renderVendor(out, k) {
     var d = VENDOR[k];
-    var q = el("p", "quote-task"); q.appendChild(el("small", null, "Как производство описало задачу")); q.appendChild(document.createTextNode(d.text)); out.appendChild(q);
-    out.appendChild(lbl("Параметры, извлечённые из описания")); out.appendChild(params(d.params));
-    out.appendChild(lbl("Подобранные позиции"));
+    var q = el("p", "quote-task"); q.appendChild(el("small", null, d.src)); q.appendChild(document.createTextNode(d.text)); out.appendChild(q);
+    out.appendChild(lbl("ТЗ: параметры, извлечённые автоматически")); out.appendChild(params(d.params));
+    out.appendChild(lbl("Подобрано из вашего каталога"));
     var ul = el("ul", "opts");
     d.opts.forEach(function (o) {
       var li = el("li", "opt" + (o[3] ? " best" : ""));
@@ -160,7 +160,7 @@
       ul.appendChild(li);
     });
     out.appendChild(ul);
-    out.appendChild(lbl("Расчёт, который уже видел заказчик")); out.appendChild(econ(d, ""));
+    out.appendChild(lbl("Обоснование для клиента")); out.appendChild(econ(d, ""));
   }
 
   function renderDemo() {
@@ -223,7 +223,7 @@
       goal("form_step1", { audience: AUDIENCE });
       $("#step1").hidden = true; $("#step2").hidden = false;
     }).catch(function () {
-      msg("Не получилось отправить. Напишите нам на " + CONFIG.FALLBACK_EMAIL + " или в Telegram.", "err");
+      msg("Не получилось отправить. Напишите нам на " + CONFIG.FALLBACK_EMAIL + " или в Telegram @archadasupport.", "err");
     }).then(function () { btn.disabled = false; });
   });
 
