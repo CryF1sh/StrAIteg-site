@@ -18,7 +18,9 @@ vendors/index.html     — лендинг для вендоров (vendors.strai
 privacy/index.html     — политика обработки ПД (/privacy/ на обоих поддоменах)
 assets/                — стили, скрипт, логотип, превью, шрифты (общие для обоих поддоменов)
 .htaccess              — маршрутизация по поддомену для Apache
-SEO.md                 — ключевые запросы и настройка индексации
+SEO.md                 — ключевые запросы, индексация и запуск в поисковиках
+llms.txt, llms-vendors.txt — описание сервиса для нейросетей (/llms.txt по поддомену)
+<32 символа>.txt       — ключ IndexNow; deploy/indexnow.sh — уведомить Яндекс и Bing
 deploy/nginx.conf      — конфиг nginx (копируется один раз)
 deploy/nginx-site.conf, deploy/nginx-maps.conf — маршруты, подключаются из репозитория
 robots.txt, sitemap.xml                  — для factory

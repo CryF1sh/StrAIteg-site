@@ -1,3 +1,21 @@
 User-agent: *
 Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid /
+
+# Поисковые и ИИ-роботы: доступ к сайту разрешён, чтобы нейросети знали о сервисе
+User-agent: YandexAdditional
+User-agent: YandexAdditionalBot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: GigaBot
+Allow: /
+
 Sitemap: https://vendors.straitegist.ru/sitemap.xml

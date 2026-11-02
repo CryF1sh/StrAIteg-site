@@ -52,9 +52,22 @@
 | H1 | Подбор промышленного оборудования под вашу задачу и вендор, который его поставит и внедрит | без изменений (H1 работает на конверсию) |
 | description | подбор промышленного оборудования, станки ЧПУ, промышленные роботы, ТЗ на оборудование, поставщики | клиенты для вендоров и интеграторов, заявки на роботизацию и промышленное оборудование, подбор оборудования по ТЗ, создание ТКП с помощью ИИ |
 
-## Индексация
+## Индексация и запуск
 
-- Яндекс Вебмастер и Google Search Console: добавить `factory.straitegist.ru` и `vendors.straitegist.ru` как два отдельных сайта.
-- Sitemap: `https://factory.straitegist.ru/sitemap.xml` и `https://vendors.straitegist.ru/sitemap.xml` (на хостинге это файлы `sitemap.xml` и `sitemap-vendors.xml`, `.htaccess` отдаёт нужный по поддомену).
-- Регион в Вебмастере: Россия.
-- При изменении страницы обновляйте `<lastmod>` в соответствующем sitemap.
+На сайте уже есть:
+- `sitemap.xml` и `robots.txt` у каждого поддомена; в robots разрешены поисковые и ИИ-роботы, для Яндекса склеиваются UTM-метки (`Clean-param`);
+- разметка schema.org: организация, сайт, услуга с ценой, FAQ (берётся из блока «Частые вопросы» — при правке вопросов обновите и разметку);
+- `llms.txt` — краткое описание сервиса для нейросетей (`/llms.txt` на каждом поддомене);
+- IndexNow: ключ в корне сайта и скрипт `deploy/indexnow.sh`, который сообщает Яндексу и Bing об обновлении.
+
+После каждого обновления сайта:
+
+```bash
+sudo git -C /var/www/straitegist-landings pull && sudo nginx -t && sudo systemctl reload nginx && sh /var/www/straitegist-landings/deploy/indexnow.sh
+```
+
+Кабинеты (каждый поддомен добавляется отдельным сайтом, кроме Google с доменным ресурсом):
+- Яндекс Вебмастер: webmaster.yandex.ru — права через DNS TXT, sitemap, регион «Россия», переобход главной.
+- Google Search Console: search.google.com/search-console — ресурс «Домен» `straitegist.ru` через DNS TXT, sitemap обоих поддоменов.
+- Bing Webmaster Tools: bing.com/webmasters — импорт из Google Search Console. Индекс Bing использует ChatGPT-поиск и Copilot.
+- Яндекс Метрика: номер счётчика в `window.YM_ID` на обеих страницах.

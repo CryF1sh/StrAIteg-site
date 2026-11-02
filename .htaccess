@@ -7,6 +7,7 @@
 DirectoryIndex index.html
 Options -Indexes
 AddDefaultCharset utf-8
+AddType "text/plain; charset=utf-8" .txt
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
@@ -38,6 +39,8 @@ RewriteCond %{HTTP_HOST} ^vendors\. [NC]
 RewriteRule ^robots\.txt$ robots-vendors.txt [L]
 RewriteCond %{HTTP_HOST} ^vendors\. [NC]
 RewriteRule ^sitemap\.xml$ sitemap-vendors.xml [L]
+RewriteCond %{HTTP_HOST} ^vendors\. [NC]
+RewriteRule ^llms\.txt$ llms-vendors.txt [L]
 
 # Служебные файлы сайта наружу не отдаём
 RewriteRule ^(README\.md|SEO\.md|deploy/.*|\.git(/.*)?|\.gitignore)$ - [F,L]
