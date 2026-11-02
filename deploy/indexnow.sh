@@ -13,6 +13,6 @@ ping_host() {
     echo "$host → $ep: $code"
   done
 }
-ping_host factory.straitegist.ru / /privacy/
-ping_host vendors.straitegist.ru /
+ping_host factory.straitegist.ru / /en/ /privacy/ /en/privacy/
+ping_host vendors.straitegist.ru / /en/
 echo "200 или 202 — принято. 403 — ключ не найден на сайте (проверьте, что git pull выполнен)."

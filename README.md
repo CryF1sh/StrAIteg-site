@@ -21,6 +21,10 @@ assets/                — стили, скрипт, логотип, превь�
 SEO.md                 — ключевые запросы, индексация и запуск в поисковиках
 llms.txt, llms-vendors.txt — описание сервиса для нейросетей (/llms.txt по поддомену)
 <32 символа>.txt       — ключ IndexNow; deploy/indexnow.sh — уведомить Яндекс и Bing
+en/index.html          — английская версия для производств (factory.straitegist.ru/en/)
+vendors/en/index.html  — английская версия для вендоров (vendors.straitegist.ru/en/)
+en/privacy/index.html  — политика на английском
+i18n/                  — сборщик английской версии и словарь переводов (см. ниже)
 deploy/nginx.conf      — конфиг nginx (копируется один раз)
 deploy/nginx-site.conf, deploy/nginx-maps.conf — маршруты, подключаются из репозитория
 robots.txt, sitemap.xml                  — для factory
@@ -69,6 +73,19 @@ sudo git -C /var/www/straitegist-landings pull && sudo nginx -t && sudo systemct
 ```
 
 Маршруты лежат в `deploy/nginx-site.conf` и `deploy/nginx-maps.conf`. nginx подключает их прямо из репозитория, поэтому они обновляются через `git pull`.
+
+### Английская версия
+
+Английские страницы собираются из русских. Правьте только русские страницы, потом:
+
+1. добавьте перевод новых или изменённых фраз в `i18n/pairs.txt` (строка «русский текст || English text»);
+2. выполните из корня репозитория:
+
+```bash
+python3 i18n/build.py .
+```
+
+Скрипт пересоздаст английские страницы, переключатель RU / EN, связки hreflang и словарь для `assets/site.js`. Если какой-то фразы нет в словаре, он выведет её в списке `missing`.
 
 ## Перед запуском: обязательные шаги
 

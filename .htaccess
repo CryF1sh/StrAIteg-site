@@ -36,6 +36,8 @@ RewriteRule ^vendors(/.*)?$ https://vendors.straitegist.ru/ [R=301,L]
 RewriteCond %{HTTP_HOST} ^vendors\. [NC]
 RewriteRule ^$ vendors/index.html [L]
 RewriteCond %{HTTP_HOST} ^vendors\. [NC]
+RewriteRule ^en/?$ vendors/en/index.html [L]
+RewriteCond %{HTTP_HOST} ^vendors\. [NC]
 RewriteRule ^robots\.txt$ robots-vendors.txt [L]
 RewriteCond %{HTTP_HOST} ^vendors\. [NC]
 RewriteRule ^sitemap\.xml$ sitemap-vendors.xml [L]
@@ -43,7 +45,7 @@ RewriteCond %{HTTP_HOST} ^vendors\. [NC]
 RewriteRule ^llms\.txt$ llms-vendors.txt [L]
 
 # Служебные файлы сайта наружу не отдаём
-RewriteRule ^(README\.md|SEO\.md|deploy/.*|\.git(/.*)?|\.gitignore)$ - [F,L]
+RewriteRule ^(README\.md|SEO\.md|deploy/.*|i18n/.*|\.git(/.*)?|\.gitignore)$ - [F,L]
 </IfModule>
 
 <IfModule mod_headers.c>

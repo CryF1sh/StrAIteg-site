@@ -22,6 +22,7 @@
 - [Для производств](https://factory.straitegist.ru/): бесплатный подбор оборудования и поставщика
 - [Платформа СтрAIтег](https://straitegist.ru/): личный кабинет
 - [Политика обработки персональных данных](https://factory.straitegist.ru/privacy/)
+- [English version](https://vendors.straitegist.ru/en/)
 
 ## Контакты
 - Почта: info@straitegist.ru

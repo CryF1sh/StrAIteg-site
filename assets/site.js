@@ -14,6 +14,161 @@
     FALLBACK_EMAIL: "info@straitegist.ru"
   };
 
+  var LANG = (document.documentElement.lang || "ru").slice(0, 2) === "en" ? "en" : "ru";
+  function T(str) { return LANG === "en" && typeof I18N_EN !== "undefined" && I18N_EN[str] != null ? I18N_EN[str] : str; }
+  /* ===================== Английская версия: перевод строк скрипта ===================== */
+  var I18N_EN = {
+    "Ткань в пресс": "Fabric into press",
+    "Нужно автоматизировать укладку пропитанной ткани в вырубной пресс и извлечение готовых шайб. Сейчас 1 000 изделий в смену, позже до 2 000. Прессов четыре, рабочий стол хотим сохранить.": "We need to automate loading impregnated fabric into a die-cutting press and removing the finished washers. Currently 1,000 parts per shift, later up to 2,000. There are four presses, and we want to keep the existing work table.",
+    "Операция": "Operation",
+    "Укладка и извлечение": "Loading and unloading",
+    "Материал": "Material",
+    "Пропитанная ткань": "Impregnated fabric",
+    "Объём": "Volume",
+    "1 000–2 000 шт./смену": "1,000–2,000 parts/shift",
+    "Оборудование": "Equipment",
+    "4 вырубных пресса": "4 die-cutting presses",
+    "Точность": "Accuracy",
+    "Рифление по пресс-форме": "Ribbing must match the die",
+    "Ограничение": "Constraint",
+    "Сохранить стол": "Keep the work table",
+    "6 кг, вылет 600 мм, ±0,02 мм, 4 оси": "6 kg, 600 mm reach, ±0.02 mm, 4 axes",
+    "Точность укладки и темп до 2 000 шт. в смену, компактно встаёт в центр стола": "Placement accuracy and a rate of up to 2,000 parts per shift; fits compactly in the center of the table",
+    "Дельта-робот, 3 кг": "Delta robot, 3 kg",
+    "Класс оборудования": "Equipment class",
+    "Быстрее, но рабочей зоны мало для четырёх прессов": "Faster, but the work envelope is too small for four presses",
+    "Малогабаритный 6-осевой, 7 кг": "Compact 6-axis robot, 7 kg",
+    "Справится, но лишние оси и выше цена": "Would work, but with extra axes and a higher price",
+    "Поставщики SCARA-роботов": "SCARA robot suppliers",
+    "Есть модели с вылетом 600 мм и точностью ±0,02 мм": "Offer models with 600 mm reach and ±0.02 mm accuracy",
+    "Интеграторы ячеек для прессов": "Press cell integrators",
+    "Референсы по загрузке вырубных и штамповочных прессов": "References in die-cutting and stamping press loading",
+    "3,8–5,9 млн ₽": "₽3.8–5.9M",
+    "4–6 мес.": "4–6 mo.",
+    "11–16 мес.": "11–16 mo.",
+    "Окупаемость при высвобождении 4 операторов и ФОТ 90 тыс. ₽ в месяц на человека.": "Payback assumes 4 operators freed up at a labor cost of ₽90,000 per person per month.",
+    "Мешки на паллеты": "Bags onto pallets",
+    "В конце линии вручную укладываем мешки с сухой смесью по 25 кг на паллеты. Около 600 мешков в час, по два человека в смену, работаем в три смены.": "At the end of the line we stack 25 kg bags of dry mix onto pallets by hand. About 600 bags per hour, two people per shift, three shifts.",
+    "Паллетизация мешков": "Bag palletizing",
+    "Груз": "Load",
+    "Мешки по 25 кг": "25 kg bags",
+    "Темп": "Rate",
+    "≈ 600 шт./час": "≈ 600 per hour",
+    "Режим": "Schedule",
+    "3 смены": "3 shifts",
+    "Сейчас": "Now",
+    "2 оператора в смену": "2 operators per shift",
+    "Место": "Location",
+    "Конец линии": "End of line",
+    "Эйдос Робототехника A70-2180": "Eidos Robotics A70-2180",
+    "70 кг, вылет 2 180 мм, 6 осей, IP54": "70 kg, 2,180 mm reach, 6 axes, IP54",
+    "Запас по массе с учётом захвата, вылета хватает на две паллеты": "Payload margin including the gripper; reach covers two pallets",
+    "Завод Роботов RusRobot RR 120-2900": "Zavod Robotov RusRobot RR 120-2900",
+    "120 кг, вылет 2 900 мм": "120 kg, 2,900 mm reach",
+    "Больший запас, если позже появятся мешки по 50 кг": "More margin if 50 kg bags come later",
+    "Колонный паллетайзер": "Column palletizer",
+    "Дешевле, но работает медленнее робота": "Cheaper, but slower than a robot",
+    "Поставщики паллетайзеров": "Palletizer suppliers",
+    "Роботы грузоподъёмностью от 50 кг, вилочные захваты для мешков": "Robots with 50 kg+ payload, fork grippers for bags",
+    "Интеграторы упаковочных линий": "Packaging line integrators",
+    "Ограждение ячейки, световой барьер, пусконаладка на месте": "Cell fencing, light curtain, on-site commissioning",
+    "7–10 млн ₽": "₽7–10M",
+    "3–5 мес.": "3–5 mo.",
+    "15–21 мес.": "15–21 mo.",
+    "Окупаемость при высвобождении 6 операторов и ФОТ 80 тыс. ₽ в месяц на человека.": "Payback assumes 6 operators freed up at a labor cost of ₽80,000 per person per month.",
+    "Загрузка станка ЧПУ": "CNC machine tending",
+    "Токарный станок с ЧПУ, оператор вручную ставит заготовки до 8 кг. Цикл обработки около 4 минут. Хотим, чтобы станок работал и ночью без людей.": "A CNC lathe where the operator loads blanks of up to 8 kg by hand. The machining cycle is about 4 minutes. We want the machine to run at night without people.",
+    "Загрузка станка": "Machine loading",
+    "Заготовка": "Blank",
+    "До 8 кг": "Up to 8 kg",
+    "Цикл": "Cycle",
+    "≈ 4 мин": "≈ 4 min",
+    "Ночь без оператора": "Unattended night shift",
+    "Токарный ЧПУ": "CNC lathe",
+    "Требование": "Requirement",
+    "Рядом с людьми днём": "Works next to people by day",
+    "Коллаборативный робот, 10–12 кг": "Collaborative robot, 10–12 kg",
+    "Работает рядом с людьми без ограждения, быстро перенастраивается": "Works next to people without fencing, quick changeover",
+    "Промышленный 6-осевой, 12–20 кг": "Industrial 6-axis robot, 12–20 kg",
+    "Быстрее, но нужны ограждение и больше места": "Faster, but needs fencing and more space",
+    "Портальный загрузчик": "Gantry loader",
+    "Хорош для больших серий, сложно встроить в действующий участок": "Good for large batches, hard to fit into an existing area",
+    "Поставщики коботов": "Cobot suppliers",
+    "Коллаборативные роботы 10–12 кг для работы рядом с людьми": "10–12 kg collaborative robots for work next to people",
+    "Интеграторы ячеек для станков": "Machine tending cell integrators",
+    "Опыт роботизации загрузки токарных станков с ЧПУ": "Experience automating CNC lathe loading",
+    "3,5–5 млн ₽": "₽3.5–5M",
+    "2–4 мес.": "2–4 mo.",
+    "12–18 мес.": "12–18 mo.",
+    "Окупаемость за счёт ночной смены без оператора: станок работает на треть дольше.": "Payback comes from an unattended night shift: the machine runs a third longer per day.",
+    "Клиент, которого привёл СтрAIтег · описание задачи": "Customer brought by StrAItegist · task description",
+    "SCARA, 6 кг, вылет 600 мм": "SCARA, 6 kg, 600 mm reach",
+    "±0,02 мм, 4 оси, вакуумный захват": "±0.02 mm, 4 axes, vacuum gripper",
+    "Альтернатива другого производителя": "Alternative from another manufacturer",
+    "Ваш клиент · письмо на почту отдела продаж": "Your customer · email to the sales team",
+    "Робот-паллетайзер, 70 кг": "Palletizing robot, 70 kg",
+    "Вылет 2 180 мм, 6 осей, IP54": "2,180 mm reach, 6 axes, IP54",
+    "Робот 120 кг, вылет 2 900 мм": "120 kg robot, 2,900 mm reach",
+    "Ваш клиент · запрос с сайта": "Your customer · website inquiry",
+    "Без ограждения, двойной захват": "No fencing, double gripper",
+    "Под ключ": "Turnkey",
+    "Срок внедрения": "Implementation",
+    "Окупаемость": "Payback",
+    "Новый запрос": "New request",
+    "Платформа разбирает запрос": "Platform is analyzing the request",
+    "ТКП готово к отправке": "Proposal ready to send",
+    "Готов к работе": "Ready",
+    "Разбираю задачу": "Analyzing the task",
+    "Подбор готов": "Selection ready",
+    "ваш каталог": "your catalog",
+    "соответствие": "fit",
+    "ТЗ в PDF": "Spec as PDF",
+    "ТКП по вашему шаблону": "Proposal in your template",
+    "Источники по каждой цифре": "Sources for every figure",
+    "ТЗ: параметры извлечены автоматически": "Spec: parameters extracted automatically",
+    "Разбираю запрос клиента и составляю ТЗ": "Reading the customer request and writing the spec",
+    "Подобрано из вашего каталога": "Selected from your catalog",
+    "Ищу подходящие позиции в вашем каталоге": "Searching your catalog for matching items",
+    "Обоснование для клиента": "Justification for the customer",
+    "Считаю стоимость, сроки и окупаемость": "Estimating cost, timeline and payback",
+    "Готово к отправке": "Ready to send",
+    "Собираю ТКП по вашему шаблону": "Building the proposal in your template",
+    "Что мы поняли из описания": "What we understood from the description",
+    "Извлекаю операцию, массу, темп и ограничения": "Extracting the operation, weight, rate and constraints",
+    "3 варианта от разных производителей": "3 options from different manufacturers",
+    "Сравниваю каталоги производителей по требованиям": "Comparing manufacturer catalogs against the requirements",
+    "Кто поставит и внедрит": "Who will deliver and install",
+    "· по номенклатуре, референсам и региону": "· by product range, references and region",
+    "Ищу вендоров и интеграторов с похожими проектами": "Looking for vendors and integrators with similar projects",
+    "Стоимость и окупаемость": "Cost and payback",
+    "Считаю бюджет под ключ, сроки и окупаемость": "Estimating turnkey budget, timeline and payback",
+    " Это пример. По вашей задаче подберём точно.": " This is an example. For your task we'll make an exact selection.",
+    "Хотите такой же подбор по вашей задаче?": "Want a selection like this for your task?",
+    "Оборудование и вендоры за 1 рабочий день, бесплатно": "Equipment and vendors in 1 business day, free",
+    "Подобрать оборудование": "Find equipment",
+    "Похожий пример из демо: ": "Closest demo example: ",
+    ". По вашей задаче подберём точно.": ". For your task we'll make an exact selection.",
+    "Этого запроса нет среди примеров демо": "This request isn't among the demo examples",
+    "На пилоте платформа разберёт любой запрос ваших клиентов по вашему каталогу.": "In the pilot, the platform analyzes any of your customers' requests against your catalog.",
+    "Запустить бесплатный пилот": "Start a free pilot",
+    "Этой задачи нет среди примеров демо": "This task isn't among the demo examples",
+    "Отправьте её нам: подберём оборудование и вендоров и пришлём результат за 1 рабочий день, бесплатно.": "Send it to us: we'll select equipment and vendors and send you the result within 1 business day, free.",
+    "Отправить мою задачу": "Send my task",
+    "Ник или телефон в Telegram": "Telegram username or phone",
+    "@username или +7 900 000-00-00": "@username or +7 900 000-00-00",
+    "Укажите ник в Telegram (@username) или номер телефона.": "Enter your Telegram username (@username) or phone number.",
+    "Телефон, привязанный к MAX": "Phone number linked to MAX",
+    "Укажите номер телефона, например +7 900 000-00-00.": "Enter a phone number, for example +7 900 000-00-00.",
+    "Телефон в WhatsApp": "WhatsApp phone number",
+    "Телефон для звонка": "Phone number for a call",
+    "Рабочая почта": "Work email",
+    "Укажите почту, например name@company.ru.": "Enter an email address, for example name@company.com.",
+    "Не получилось отправить. Напишите нам на ": "Couldn't send. Email us at ",
+    " или в Telegram @archadasupport.": " or message @archadasupport on Telegram.",
+    "Готово, спасибо!": "Done, thank you!",
+    "name@company.ru": "name@company.com"
+    };
+  /* ===================== /Английская версия ===================== */
   var AUDIENCE = document.body.getAttribute("data-audience") || "plant"; // plant | vendor
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
@@ -41,7 +196,7 @@
   });
 
   /* ===================== Демо ===================== */
-  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = T(text); return e; }
 
   var PLANT = {
     press: {
@@ -119,16 +274,16 @@
     ? { idle: "Новый запрос", run: "Платформа разбирает запрос", done: "ТКП готово к отправке" }
     : { idle: "Готов к работе", run: "Разбираю задачу", done: "Подбор готов" };
   var MATCH = {
-    press: /ткан|пресс|шайб|вырубн|штамп/i,
-    pallet: /паллет|палет|поддон|мешк|короб|упаков/i,
-    cnc: /станк|станок|чпу|заготов|токар|фрезер|обработ/i
+    press: /ткан|пресс|шайб|вырубн|штамп|fabric|press|washer|die.?cut|stamp/i,
+    pallet: /паллет|палет|поддон|мешк|короб|упаков|pallet|bag|sack|carton|box|packag/i,
+    cnc: /станк|станок|чпу|заготов|токар|фрезер|обработ|cnc|lathe|machin|blank|milling|turning/i
   };
   var token = 0;
 
   function setStatus(state) {
     var s = $("#demo-status"); if (!s) return;
     s.setAttribute("data-state", state);
-    var t = s.querySelector("span"); if (t) t.textContent = STATUS[state];
+    var t = s.querySelector("span"); if (t) t.textContent = T(STATUS[state]);
   }
   function wait(ms) { return new Promise(function (r) { setTimeout(r, REDUCE ? 0 : ms); }); }
   function stagger(root) {
@@ -136,7 +291,7 @@
   }
   function stage(n, title, sub, doing, body) {
     var root = el("div", "stg wait"), h = el("p", "stg-h"), num = el("span", "n", String(n));
-    h.appendChild(num); h.appendChild(document.createTextNode(title));
+    h.appendChild(num); h.appendChild(document.createTextNode(T(title)));
     if (sub) { h.appendChild(document.createTextNode(" ")); h.appendChild(el("span", "sub2", sub)); }
     root.appendChild(h); root.appendChild(el("p", "doing", doing));
     var bd = el("div", "bd"); bd.appendChild(body); root.appendChild(bd);
@@ -168,7 +323,7 @@
     if (AUDIENCE === "vendor") {
       var dv = VENDOR[k], files = el("ul", "files");
       [["description", "ТЗ в PDF"], ["request_quote", "ТКП по вашему шаблону"], ["link", "Источники по каждой цифре"]].forEach(function (f) {
-        var li = el("li"); li.appendChild(el("span", "ic", f[0])); li.appendChild(document.createTextNode(f[1])); files.appendChild(li);
+        var li = el("li"); li.appendChild(el("span", "ic", f[0])); li.appendChild(document.createTextNode(T(f[1]))); files.appendChild(li);
       });
       return { stages: [
         stage(1, "ТЗ: параметры извлечены автоматически", null, "Разбираю запрос клиента и составляю ТЗ", params(dv.params)),
@@ -186,7 +341,7 @@
       stage(1, "Что мы поняли из описания", null, "Извлекаю операцию, массу, темп и ограничения", params(d.params)),
       stage(2, "3 варианта от разных производителей", null, "Сравниваю каталоги производителей по требованиям", optList(d.opts, false)),
       stage(3, "Кто поставит и внедрит", "· по номенклатуре, референсам и региону", "Ищу вендоров и интеграторов с похожими проектами", vl),
-      stage(4, "Стоимость и окупаемость", null, "Считаю бюджет под ключ, сроки и окупаемость", frag([econ(d, "pay"), el("p", "note", d.note + " Это пример. По вашей задаче подберём точно.")]))
+      stage(4, "Стоимость и окупаемость", null, "Считаю бюджет под ключ, сроки и окупаемость", frag([econ(d, "pay"), el("p", "note", T(d.note) + T(" Это пример. По вашей задаче подберём точно."))]))
     ], tail: plaque("Хотите такой же подбор по вашей задаче?", "Оборудование и вендоры за 1 рабочий день, бесплатно", "Подобрать оборудование") };
   }
 
@@ -201,9 +356,9 @@
   function run(k, mode, matched) {
     var my = ++token, out = $("#demo-out"), ta = $("#demo-task"), btn = $("#demo-run");
     current = k; setChips();
-    var text = DATA[k].text, built = buildStages(k);
+    var text = T(DATA[k].text), built = buildStages(k);
     out.innerHTML = "";
-    if (matched) out.appendChild(el("p", "note match", "Похожий пример из демо: " + DATA[k].label + ". По вашей задаче подберём точно."));
+    if (matched) out.appendChild(el("p", "note match", T("Похожий пример из демо: ") + T(DATA[k].label) + T(". По вашей задаче подберём точно.")));
     built.stages.forEach(function (s) { out.appendChild(s.root); stagger(s.root); });
     function done() {
       if (built.tail) { built.tail.classList.add("demo-tail"); out.appendChild(built.tail); }
@@ -248,7 +403,7 @@
     var ta = $("#demo-task"), text = ta ? ta.value.trim() : "";
     if (!text) { if (ta) { ta.focus(); ta.classList.add("bad"); } return; }
     goal("demo_run", { audience: AUDIENCE });
-    for (var i = 0; i < KEYS.length; i++) if (text === DATA[KEYS[i]].text) { run(KEYS[i], "run", false); return; }
+    for (var i = 0; i < KEYS.length; i++) if (text === DATA[KEYS[i]].text || text === T(DATA[KEYS[i]].text)) { run(KEYS[i], "run", false); return; }
     for (var j = 0; j < KEYS.length; j++) if (MATCH[KEYS[j]].test(text)) { run(KEYS[j], "run", true); return; }
     miss(text);
   }
@@ -303,7 +458,7 @@
     }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r; });
   }
   function base(step) {
-    return { lead_id: LEAD_ID, step: step, audience: AUDIENCE, page: location.href, referrer: document.referrer || "", utm: UTM, sent_at: new Date().toISOString() };
+    return { lead_id: LEAD_ID, step: step, audience: AUDIENCE, lang: LANG, page: location.href, referrer: document.referrer || "", utm: UTM, sent_at: new Date().toISOString() };
   }
   function msg(text, cls) { var m = $("#form-msg"); if (m) { m.className = "msg " + (cls || ""); m.textContent = text; } }
 
@@ -332,8 +487,8 @@
   function applyChannel() {
     if (!f1 || !f1.contact) return;
     var c = CH[channel()], inp = f1.contact, lab = inp.id ? $("label[for=\"" + inp.id + "\"]") : null;
-    if (lab) lab.textContent = c.l;
-    inp.setAttribute("placeholder", c.ph); inp.setAttribute("inputmode", c.im); inp.setAttribute("autocomplete", c.ac);
+    if (lab) lab.textContent = T(c.l);
+    inp.setAttribute("placeholder", T(c.ph)); inp.setAttribute("inputmode", c.im); inp.setAttribute("autocomplete", c.ac);
     try { inp.type = c.t; } catch (e) {}
     inp.classList.remove("bad"); msg("");
   }
@@ -350,7 +505,7 @@
     var task = f1.task ? f1.task.value.trim() : "";
     var company = f1.company ? f1.company.value.trim() : "";
     if (!contactOk(channel(), contact)) {
-      msg(CH[channel()].err, "err"); f1.contact.classList.add("bad"); f1.contact.focus(); return;
+      msg(T(CH[channel()].err), "err"); f1.contact.classList.add("bad"); f1.contact.focus(); return;
     }
     var mess = f1.querySelector("input[name=messenger]:checked");
     var p = base(1);
@@ -361,7 +516,7 @@
       goal("form_step1", { audience: AUDIENCE });
       $("#step1").hidden = true; $("#step2").hidden = false;
     }).catch(function () {
-      msg("Не получилось отправить. Напишите нам на " + CONFIG.FALLBACK_EMAIL + " или в Telegram @archadasupport.", "err");
+      msg(T("Не получилось отправить. Напишите нам на ") + CONFIG.FALLBACK_EMAIL + T(" или в Telegram @archadasupport."), "err");
     }).then(function () { btn.disabled = false; });
   });
 
@@ -376,7 +531,7 @@
     var btn = f2.querySelector("button[type=submit]"); btn.disabled = true;
     send(p).then(function () {
       goal("form_step2", { audience: AUDIENCE });
-      btn.textContent = "Готово, спасибо!";
+      btn.textContent = T("Готово, спасибо!");
     }).catch(function () { btn.disabled = false; });
   });
 })();

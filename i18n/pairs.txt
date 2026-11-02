@@ -1,0 +1,492 @@
+Подбор промышленного оборудования и поставщика бесплатно | СтрAIтег || Free industrial equipment and supplier selection | StrAItegist
+Бесплатный подбор промышленного оборудования для производства: станки ЧПУ, промышленные роботы, линии. За 1 рабочий день пришлём ТЗ на оборудование, 3 варианта и поставщиков, которые его поставят и внедрят. || Free industrial equipment selection for manufacturers: CNC machines, industrial robots, production lines. Within 1 business day you get an equipment spec, 3 options and suppliers who will deliver and install it.
+СтрAIтег || StrAItegist
+СтрAIтег, на главную || StrAItegist, home
+Я вендор || I'm a vendor
+или интегратор || or integrator
+Разделы || Sections
+Пример подбора || Selection example
+Как работает || How it works
+Кейс || Case study
+Вопросы || FAQ
+Войти || Log in
+Подобрать оборудование || Find equipment
+Открыть меню || Open menu
+Я вендор или интегратор || I'm a vendor or integrator
+Войти в кабинет || Log in to your account
+Бесплатно || Free
+для производств, без скрытых платежей || for manufacturers, no hidden fees
+Подбор промышленного оборудования под вашу задачу и вендор, который его поставит и внедрит || Industrial equipment selected for your task, and a vendor to deliver and install it
+Опишите задачу как в цеху, без технических параметров. За 1 рабочий день пришлём ТЗ, 3 варианта от разных производителей и вендоров, которым можно его передать. Бесплатно. || Describe the task the way you would on the shop floor, no technical parameters needed. Within 1 business day we send a spec, 3 options from different manufacturers and vendors you can hand it to. Free of charge.
+Посмотреть пример подбора || See a selection example
+Без регистрации · 2 минуты · бесплатно || No sign-up · 2 minutes · free
+Готовое ТЗ из вашего описания: можно сразу отправлять поставщикам || A ready spec built from your description, ready to send to suppliers
+Варианты разных производителей по одной методике, а не линейка одного продавца || Options from different manufacturers ranked by one method, not one seller's product line
+Вендоры и интеграторы под вашу задачу и регион: свяжем с теми, кого выберете || Vendors and integrators matched to your task and region: we connect you with the ones you choose
+Дополнительно: стоимость под ключ и срок окупаемости по каждому варианту || Plus: turnkey cost and payback period for each option
+Готов к работе || Ready
+Примеры || Examples
+Задача производства || Production task
+Например: укладка мешков по 25 кг на паллеты, 600 мешков в час || For example: stacking 25 kg bags onto pallets, 600 bags per hour
+Выберите пример или опишите свою задачу. Демо работает на сохранённых примерах, цифры иллюстративные. || Pick an example or describe your own task. The demo runs on saved examples; figures are illustrative.
+Разобрать задачу || Analyze task
+Цифры и партнёры || Numbers and partners
+позиций оборудования в каталоге || equipment items in the catalog
+вендоров и интеграторов, которых можем предложить || vendors and integrators we can recommend
+задач производств разобрано || production tasks analyzed
+вендора робототехники и станков уже подключаются || robotics and machine tool vendors are onboarding
+Партнёры || Partners
+Корпорация развития Нижегородской области || Nizhny Novgorod Region Development Corporation
+Как это работает || How it works
+От описания задачи до вендора, который возьмётся за проект || From a task description to a vendor who takes on the project
+Не нужно знать грузоподъёмность, вылет или число осей и перебирать каталоги поставщиков. Мы помогаем определиться с оборудованием, составляем ТЗ и находим тех, кто его поставит. || You don't need to know payload, reach or number of axes, or go through supplier catalogs. We help you settle on the equipment, write the spec and find who will supply it.
+Опишите задачу словами || Describe the task in plain words
+Какая операция, сколько изделий в смену, что мешает сейчас. Можно приложить фото участка или готовое ТЗ. || What the operation is, how many parts per shift, what gets in the way today. You can attach photos of the area or an existing spec.
+2 минуты || 2 minutes
+Подберём оборудование и составим ТЗ || We select equipment and write the spec
+Извлекаем параметры и подбираем 3 варианта из каталогов разных производителей, с обоснованием выбора. По каждому считаем стоимость и окупаемость. || We extract the parameters and pick 3 options from different manufacturers' catalogs, with the reasoning for each. For every option we estimate cost and payback.
+в течение дня || within a day
+Найдём вендора и свяжем вас || We find a vendor and connect you
+Предложим вендоров и интеграторов под вашу задачу и регион. Вы выбираете, кому передать ТЗ, и получаете КП уже по готовому заданию. || We suggest vendors and integrators for your task and region. You choose who gets the spec and receive quotes based on it.
+1 рабочий день || 1 business day
+Бесплатно. Оплата не предусмотрена ни в каком виде || Free. There is no charge of any kind
+Как ещё можно подобрать оборудование || Other ways to select equipment
+Почему не напрямую у поставщика или в бюро || Why not go straight to a supplier or an engineering firm
+Каждый способ рабочий, но у каждого свой предел. || Each option works, but each has its limits.
+Способ || Option
+Ограничение || Limitation
+Конфигуратор вендора || Vendor configurator
+Подбор в своей линейке, бесплатно в обмен на покупку || Selection within its own range, free in exchange for a purchase
+Сравнения с другими производителями нет || No comparison with other manufacturers
+Инжиниринговое бюро || Engineering firm
+Ручной подбор и расчёт, около 25% от стоимости оборудования || Manual selection and calculations, about 25% of the equipment cost
+Дорого для перебора вариантов, недели вместо дня || Too expensive for comparing options, weeks instead of a day
+Системный интегратор || System integrator
+Подбор и расчёт вручную, в рамках своих поставщиков || Manual selection and calculations, limited to its own suppliers
+Тот же конфликт интересов, выше стоимость || The same conflict of interest, at a higher cost
+Варианты разных производителей по одной методике, ТЗ и подходящие вендоры || Options from different manufacturers ranked by one method, a spec and matching vendors
+Бесплатно для производства, за 1 рабочий день || Free for manufacturers, in 1 business day
+Почему сравнению можно доверять || Why you can trust the comparison
+Мы не продаём оборудование и не продвигаем бренды || We don't sell equipment or promote brands
+Варианты ранжируются по одной методике для всех производителей. У каждого варианта видно, почему он в списке и откуда взяты цифры. || Options are ranked by the same method for every manufacturer. For each option you can see why it made the list and where the figures come from.
+Совпадение с задачей || Fit to the task
+Масса, темп, точность, условия цеха и ограничения по месту || Weight, rate, accuracy, shop conditions and space constraints
+Стоимость под ключ || Turnkey cost
+Оборудование, оснастка, интеграция и пусконаладка || Equipment, tooling, integration and commissioning
+Срок и риски поставки || Lead time and supply risks
+Сроки внедрения, доступность сервиса и запчастей в России || Implementation time, service and spare parts availability in Russia
+Опыт вендора || Vendor experience
+Номенклатура, референсы в похожих задачах и работа в вашем регионе || Product range, references in similar projects and presence in your region
+Место в подборе нельзя купить. || A place in the selection cannot be bought.
+Вендоры платят за работу с заявками в своём кабинете, но это не влияет на порядок и состав вариантов в вашем расчёте. Ваш контакт получат только поставщики, которых выберете вы. || Vendors pay to work with requests in their account, but that has no effect on which options appear in your results or in what order. Only the suppliers you choose get your contact details.
+Образец результата || Sample result
+Так выглядит подбор, который вы получите || This is what your selection report looks like
+Техническое задание, собранное из вашего описания || A technical specification built from your description
+3 варианта оборудования разных производителей с обоснованием || 3 equipment options from different manufacturers, with reasoning
+Вендоры и интеграторы, которые поставят и внедрят || Vendors and integrators who will deliver and install
+Стоимость под ключ, срок внедрения и окупаемость || Turnkey cost, implementation time and payback
+Ссылки на источники по каждой цифре || A source link for every figure
+Скачать пример подбора (PDF) || Download a sample report (PDF)
+Пришлём PDF в мессенджер. Без звонков, если не попросите || We'll send the PDF to your messenger. No calls unless you ask
+Превью страницы отчёта || Report page preview
+Подбор оборудования · Укладка ткани в вырубной пресс || Equipment selection · Loading fabric into a die-cutting press
+Образец || Sample
+Задача || Task
+Укладка пропитанной ткани в 4 вырубных пресса и извлечение шайб. 1 000–2 000 шт. в смену, рабочий стол сохранить. || Loading impregnated fabric into 4 die-cutting presses and removing the washers. 1,000–2,000 parts per shift; keep the existing work table.
+Варианты || Options
+Вариант || Option
+Соответствие || Fit
+Под ключ, млн ₽ || Turnkey, ₽M
+SCARA, 6 кг, вылет 600 мм || SCARA, 6 kg, 600 mm reach
+Дельта-робот, 3 кг || Delta robot, 3 kg
+Малогабаритный 6-осевой, 7 кг || Compact 6-axis robot, 7 kg
+Кто поставит и внедрит || Who will deliver and install
+Поставщики SCARA-роботов и интеграторы ячеек для прессов: || SCARA robot suppliers and press cell integrators:
+[2–3 компании, работают в вашем регионе] || [2–3 companies operating in your region]
+Окупаемость || Payback
+11–16 месяцев при высвобождении 4 операторов (2 смены по 2 человека), ФОТ 90 тыс. ₽ в месяц на человека. Срок внедрения 4–6 месяцев. || 11–16 months, freeing up 4 operators (2 shifts of 2 people) at a labor cost of ₽90,000 per person per month. Implementation takes 4–6 months.
+Источники || Sources
+[1] Каталог производителя · [2] Паспорт оборудования · [3] Расчётная модель окупаемости || [1] Manufacturer catalog · [2] Equipment datasheet · [3] Payback model
+Производство шайб: от запроса без параметров до вендора, который взял проект || Washer production: from a request with no parameters to a vendor who took on the project
+Запрос пришёл языком цеха: укладка пропитанной ткани в вырубной пресс, 1 000–2 000 изделий в смену. Ни грузоподъёмности, ни вылета робота в нём не было. || The request came in shop-floor language: loading impregnated fabric into a die-cutting press, 1,000–2,000 parts per shift. It said nothing about robot payload or reach.
+Подобрать оборудование под мою задачу || Find equipment for my task
+Обычно || Usually
+Недели переписки с поставщиками или 100–200 тыс. ₽ за подбор в инжиниринговом бюро. || Weeks of back-and-forth with suppliers, or ₽100,000–200,000 for a selection by an engineering firm.
+Со СтрAIтегом || With StrAItegist
+Подобрали SCARA-робот с обоснованием характеристик, вакуумный захват и компоновку ячейки, собрали ТЗ. Стоимость под ключ 3,8–5,9 млн ₽, срок 4–6 месяцев. || We selected a SCARA robot with justified specs, a vacuum gripper and a cell layout, and put together the spec. Turnkey cost ₽3.8–5.9M, timeline 4–6 months.
+Нашли вендора || Vendor found
+Ведущий вендор робототехники получил готовое ТЗ и взял проект в работу. || A leading robotics vendor received the ready spec and took on the project.
+[Следующий шаг: КП, заказ, сумма, сроки] || [Next step: quote, order, amount, timeline]
+[Цитата технолога или руководителя производства, 1–2 предложения] || [Quote from a process engineer or production manager, 1–2 sentences]
+[Должность], производство в [регион] || [Job title], manufacturer in [region]
+Безопасность и данные || Security and data
+Ваша задача остаётся вашей || Your task stays yours
+Описание участка и объёмы нужны только для подбора. Вендор узнает о задаче, только если вы его выберете. || The description of your area and volumes is used only for the selection. A vendor learns about your task only if you choose them.
+Каждый вывод со ссылкой на источник || Every conclusion links to its source
+Цифры можно проверить: каталог, паспорт оборудования, расчётная модель. || You can check every figure: catalog, equipment datasheet, calculation model.
+Данные хранятся в России || Data stays in Russia
+Серверы в РФ, отечественный технологический стек. || Servers in Russia, Russian technology stack.
+Ваши данные не используются для обучения || Your data is not used for training
+И не передаются вендорам без вашего согласия. || And it is not shared with vendors without your consent.
+Под капотом: RuBERT, CatBoost, Qdrant, GigaChat || Under the hood: RuBERT, CatBoost, Qdrant, GigaChat
+Частые вопросы производств || FAQ for manufacturers
+Это правда бесплатно? || Is it really free?
+Да. Для производств подбор оборудования и вендора бесплатен, оплата не предусмотрена ни в каком виде. Сервис оплачивают вендоры, которые работают с заявками в своём кабинете. || Yes. Equipment and vendor selection is free for manufacturers, with no charge of any kind. The service is paid for by vendors who work with requests in their account.
+Вы продаёте оборудование? || Do you sell equipment?
+Нет. Мы не продаём оборудование и не конкурируем с поставщиками. Наша задача — помочь вам определиться с оборудованием и найти, кто его поставит. || No. We don't sell equipment and don't compete with suppliers. Our job is to help you settle on the equipment and find who will supply it.
+Как вы находите вендора? || How do you find a vendor?
+Сопоставляем вашу задачу с профилями вендоров и интеграторов: номенклатурой, референсами в похожих проектах и регионом. Предлагаем подходящих, а вы выбираете, кому передать ТЗ. || We match your task against vendor and integrator profiles: product range, references in similar projects and region. We suggest the ones that fit, and you choose who gets the spec.
+Мне начнут звонить вендоры? || Will vendors start calling me?
+Нет. Подбор приходит вам. Контакт получат только поставщики, которых вы сами выберете. || No. The selection comes to you. Only the suppliers you choose get your contact details.
+Что будет с моими данными? || What happens to my data?
+Описание задачи хранится на серверах в России и используется только для вашего подбора. Мы не используем ваши данные для обучения и не передаём их третьим лицам без вашего согласия. || Your task description is stored on servers in Russia and used only for your selection. We don't use your data for training and don't share it with third parties without your consent.
+Насколько точен подбор и цифры? || How accurate are the selection and the figures?
+У каждого варианта есть обоснование и ссылка на источник. Неуверенные места помечаем «Требует проверки специалистом». Стоимость и окупаемость предварительные, точная цена — в КП вендора по вашему ТЗ. || Every option comes with reasoning and a source link. Anything uncertain is marked "Needs expert review". Cost and payback are preliminary; the exact price comes in the vendor's quote based on your spec.
+Что если ничего не подойдёт? || What if nothing fits?
+Так и напишем, и объясним почему. Если задачу можно решить иначе, например другим классом оборудования, предложим вариант. || We'll tell you so and explain why. If the task can be solved another way, for example with a different class of equipment, we'll suggest it.
+Что будет после отправки заявки? || What happens after I send a request?
+В течение рабочего дня напишем в выбранный мессенджер, при необходимости уточним 2–3 детали и пришлём подбор: ТЗ, 3 варианта и подходящих вендоров. || Within one business day we message you in the channel you chose, clarify 2–3 details if needed and send the selection: a spec, 3 options and matching vendors.
+Нужно ли что-то знать о роботах? || Do I need to know anything about robots?
+Нет. Опишите операцию так, как объяснили бы новому сотруднику: что делаем, сколько, какие ограничения. Параметры оборудования мы определим сами. || No. Describe the operation the way you'd explain it to a new employee: what you do, how much, what the constraints are. We'll work out the equipment parameters ourselves.
+Бесплатно для производств || Free for manufacturers
+Подобрать оборудование и вендора || Find equipment and a vendor
+Опишите задачу и оставьте контакт. Остальное спросим сами. || Describe the task and leave your contact. We'll ask about the rest.
+Не заполняйте || Leave this empty
+Опишите задачу || Describe your task
+Например: укладываем мешки по 25 кг на паллеты, около 600 в час, по 2 человека в 3 смены || For example: we stack 25 kg bags onto pallets, about 600 per hour, 2 people per shift, 3 shifts
+Где удобнее получить ответ || Where should we reply
+Звонок || Call
+Почта || Email
+Телефон или ник в мессенджере || Phone or messenger username
++7 900 000-00-00 или @username || +7 900 000-00-00 or @username
+Бесплатно · ответим за 1 рабочий день || Free · reply within 1 business day
+Нажимая кнопку, вы соглашаетесь с || By clicking the button, you agree to the
+обработкой персональных данных || processing of your personal data
+Задача у нас || We've got your task
+Напишем в течение рабочего дня. Чтобы подобрать вендоров рядом с вами, добавьте пару деталей. || We'll reply within one business day. To find vendors near you, add a couple of details.
+Имя || Name
+Компания || Company
+Город или регион производства || City or region of your plant
+Например: Нижний Новгород || For example: Nizhny Novgorod
+Ваша роль || Your role
+Главный инженер, директор по производству, технолог || Chief engineer, production director, process engineer
+Дополнить заявку || Add details
+Что будет после отправки || What happens next
+Напишем в течение рабочего дня || We reply within one business day
+В Telegram, Max, WhatsApp или позвоним, как вы выбрали || In Telegram, Max, WhatsApp or by phone, as you chose
+Уточним 2–3 детали || We clarify 2–3 details
+Если в описании чего-то не хватит для подбора || If the description is missing something we need
+Пришлём подбор в PDF || We send the selection as a PDF
+ТЗ, 3 варианта, подходящие вендоры, стоимость и окупаемость || Spec, 3 options, matching vendors, cost and payback
+Свяжем с выбранным вендором || We connect you with the vendor you choose
+Передадим ему ТЗ, чтобы КП пришло по готовому заданию || We pass the spec to them, so the quote is based on it
+Связаться с нами || Contact us
+Ответим в течение рабочего дня || We reply within one business day
+© 2026 ООО «Архада», Москва || © 2026 Arkhada LLC, Moscow
+ИНН 9729414609 · ОГРН 1267700015791 || TIN 9729414609 · PSRN 1267700015791
+Вендорам и интеграторам || For vendors and integrators
+Политика конфиденциальности || Privacy policy
+Личный кабинет || Your account
+Подобрать оборудование бесплатно || Find equipment for free
+Заявки от производств и автоматизация ТКП для интеграторов и поставщиков оборудования | СтрAIтег || Leads from manufacturers and proposal automation for integrators and equipment suppliers | StrAItegist
+Клиенты для вендоров и интеграторов: заявки на роботизацию и промышленное оборудование от производств. Подбор оборудования по ТЗ из вашего каталога и создание ТКП с помощью ИИ. Первый месяц бесплатно. || Customers for vendors and integrators: robotics and industrial equipment requests from manufacturers. Equipment selection from your catalog based on the spec, and AI-generated proposals. First month free.
+Я производство → || I'm a manufacturer →
+Пример заявки || Request example
+Подключение || Onboarding
+Условия || Pricing
+Получить прайс || Get pricing
+Я производство || I'm a manufacturer
+Для вендоров и интеграторов робототехники и станков || For robotics and machine tool vendors and integrators
+ТЗ, подбор из вашего каталога и ТКП по запросу клиента за минуты: || Spec, selection from your catalog and a proposal for any customer request in minutes:
+первый месяц и 100 запросов бесплатно || first month and 100 requests free
+Инженеру больше не нужно 3–5 часов разбирать запрос. Платформа пишет ТЗ, подбирает позиции из вашего каталога и собирает ТКП по вашему шаблону. А ещё приводит новых клиентов: производства, которые ищут решение сейчас. || Your engineers no longer spend 3–5 hours decoding a request. The platform writes the spec, picks items from your catalog and builds the proposal in your template. It also brings new customers: manufacturers looking for a solution right now.
+Получить условия пилота и прайс || Get pilot terms and pricing
+Посмотреть пример заявки || See a request example
+Без обязательств · покажем на вашем каталоге || No commitment · we'll show it on your catalog
+ТЗ из запроса клиента: параметры извлекаются из письма или описания языком цеха || A spec from the customer's request: parameters are extracted from an email or a shop-floor description
+Подбор позиций из вашего каталога с обоснованием и расчётом окупаемости || Items selected from your catalog, with reasoning and a payback estimate
+ТКП по вашему шаблону: менеджеру остаётся проверить и отправить || A proposal in your template: your manager only reviews and sends it
+Новые клиенты: целевые заявки от производств, которых приводим мы || New customers: qualified requests from manufacturers we bring to you
+Запрос в кабинете || Request in your account
+Новый запрос || New request
+Запрос клиента || Customer request
+Например: клиент хочет автоматизировать загрузку токарного станка, заготовки до 8 кг || For example: a customer wants to automate CNC lathe loading, blanks up to 8 kg
+Выберите пример или вставьте запрос клиента. Демо работает на сохранённых примерах, цифры иллюстративные. || Pick an example or paste a customer request. The demo runs on saved examples; figures are illustrative.
+Разобрать запрос || Analyze request
+Хотите так же обрабатывать запросы своих клиентов? || Want to handle your customers' requests like this?
+Первый месяц и 100 запросов бесплатно || First month and 100 requests free
+Запустить бесплатный пилот || Start a free pilot
+Цифры и клиенты || Numbers and customers
+3–5 ч || 3–5 h
+инженера уходит на разбор одного запроса языком цеха || of engineering time to decode one shop-floor request
+≈ 5 тыс. ₽ || ≈ ₽5,000
+стоит входящая заявка в промышленном B2B || is the cost of one inbound lead in industrial B2B
++15–25% за год || +15–25% per year
+обращений доходят до контракта || of inquiries turn into contracts
+цикл сделки 2–4 месяца || sales cycle of 2–4 months
+позиций в каталоге платформы || items in the platform catalog
+Что входит в подписку || What the subscription includes
+Автоматизация пресейла и новые клиенты в одном кабинете || Presales automation and new customers in one account
+Подписка — это не только заявки. Платформа берёт на себя рутину между запросом клиента и ТКП: и по вашим клиентам, и по тем, кого приводим мы. Мы не продаём оборудование и не конкурируем с вами. || The subscription is more than leads. The platform takes over the routine between a customer request and the proposal, both for your own customers and for the ones we bring. We don't sell equipment and don't compete with you.
+ТЗ клиента автоматически || Customer spec, automatically
+Запрос производства языком цеха превращается в техзадание: масса, темп, точность, условия цеха, ограничения. Инженер не тратит часы на переписку. || A manufacturer's shop-floor request becomes a technical spec: weight, rate, accuracy, shop conditions, constraints. Your engineer doesn't spend hours on emails.
+Подбор оборудования из вашего каталога || Equipment selection from your catalog
+Платформа подбирает подходящие позиции под ТЗ и объясняет выбор. Например, для сварки кузовных деталей — от 3 моделей с нужным вылетом и грузоподъёмностью. || The platform picks the items that fit the spec and explains the choice. For example, for welding car body parts it suggests at least 3 models with the right reach and payload.
+ТКП по вашему шаблону || Proposal in your template
+Технико-коммерческое предложение собирается под конкретного клиента по вашему шаблону. Менеджеру остаётся проверить и отправить. || A technical and commercial proposal is built for the specific customer in your template. Your manager only reviews and sends it.
+Обоснование для клиента || Justification for the customer
+Окупаемость и то, как внедрение ляжет на действующее производство. Клиенту проще согласовать бюджет, вам — закрыть сделку. || Payback and how the project fits into the existing production. It's easier for the customer to approve the budget and for you to close the deal.
+Целевые заявки от производств || Qualified requests from manufacturers
+Приводим клиентов, которые уже определились с задачей. Запрос сопоставляется с вашей номенклатурой, референсами и регионом, контакт приходит вместе с ТЗ. || We bring customers who have already defined their task. Each request is matched to your product range, references and region, and the contact arrives together with the spec.
+Аналитика и интеграции || Analytics and integrations
+Аналитика по заявкам и конверсии, обмен данными с ERP и MES через REST API на старших тарифах. || Request and conversion analytics, data exchange with ERP and MES via REST API on higher plans.
+Три шага до первого ТКП || Three steps to your first proposal
+Пилот запускаем на вашем каталоге и ваших шаблонах: сразу видно, как платформа пишет ТЗ и ТКП для ваших клиентов. || We run the pilot on your catalog and your templates, so you see right away how the platform writes specs and proposals for your customers.
+Передайте материалы || Send us your materials
+Каталог оборудования, шаблон и примеры ТКП, примеры ТЗ, клиентские кейсы. В том виде, в котором они у вас есть. || Equipment catalog, proposal template and examples, sample specs, customer cases. In whatever form you have them.
+1 созвон || 1 call
+Настроим платформу || We set up the platform
+Платформа обучается на ваших данных, мы открываем доступ к кабинету для вашей команды. || The platform learns from your data, and we open account access for your team.
+14 дней || 14 days
+Работайте в кабинете || Work in your account
+Загружайте запросы своих клиентов и получайте заявки от нас: ТЗ, подбор и ТКП готовятся автоматически. Первый месяц и до 100 запросов бесплатно. || Upload your customers' requests and receive requests from us: specs, selections and proposals are prepared automatically. First month and up to 100 requests free.
+пилот 1 месяц || 1-month pilot
+Не подойдёт: просто не продлеваете || Not a fit? Simply don't renew
+Прозрачно: подписка, пилот и комиссия || Transparent: subscription, pilot and commission
+Рассказываем обо всех платежах заранее. Комиссия — только за клиентов, которых привели мы, за своих не платите. || We tell you about every payment upfront. Commission applies only to customers we bring; you don't pay for your own.
+Пилот || Pilot
+первый месяц, до 100 запросов || first month, up to 100 requests
+Подключение каталога и шаблона ТКП || Catalog and proposal template setup
+ТЗ, подбор и ТКП по запросам ваших клиентов || Specs, selections and proposals for your customers' requests
+Заявки от производств, которых приводим мы || Requests from manufacturers we bring
+Подписка || Subscription
+от 99 000 ₽ || from ₽99,000
+в месяц, зависит от каталогов, пользователей и лимита запросов || per month, depending on catalogs, users and request limit
+Автоматизация ТЗ, подбора и ТКП по всем запросам: вашим и нашим || Automated specs, selections and proposals for all requests, yours and ours
+3 тарифа: Базовый, Профессиональный, Корпоративный || 3 plans: Basic, Professional, Enterprise
+Скидка при оплате за 3 месяца || Discount when paying for 3 months
+Корпоративный: по запросу || Enterprise: on request
+Комиссия || Commission
+только со сделок с клиентами, которых привели мы || only on deals with customers we brought
+За своих клиентов комиссии нет, даже если обрабатываете их запросы в платформе || No commission on your own customers, even if you process their requests in the platform
+Нет сделки — нет комиссии || No deal, no commission
+Фиксируется в договоре || Set out in the contract
+Получить полный прайс и условия пилота || Get full pricing and pilot terms
+Пришлём в мессенджер в течение рабочего дня || We'll send it to your messenger within one business day
+Вендор робототехники: запрос без единого параметра робота || Robotics vendor: a request without a single robot parameter
+К вендору пришёл запрос языком цеха: укладка пропитанной ткани в вырубной пресс, 1 000–2 000 изделий в смену, четыре пресса. || The vendor received a request in shop-floor language: loading impregnated fabric into a die-cutting press, 1,000–2,000 parts per shift, four presses.
+Посмотреть на моём каталоге || Try it on my catalog
+Раньше || Before
+3–5 часов работы инженера на разбор запроса или 100–200 тыс. ₽ за подбор в инжиниринговом бюро. || 3–5 hours of engineering time to decode the request, or ₽100,000–200,000 for a selection by an engineering firm.
+ТЗ и подбор за минуты: SCARA-робот с обоснованием характеристик, вакуумный захват, компоновка ячейки, стоимость под ключ 3,8–5,9 млн ₽ и срок 4–6 месяцев. Готово для ТКП клиенту. || Spec and selection in minutes: a SCARA robot with justified specs, a vacuum gripper, a cell layout, turnkey cost of ₽3.8–5.9M and a 4–6 month timeline. Ready for the customer proposal.
+Результат || Result
+Вендор взял проект в работу. || The vendor took on the project.
+[Дальше: КП на сумму …, заказ, срок поставки] || [Next: quote for …, order, delivery time]
+[Цитата инженера или коммерческого директора вендора, 1–2 предложения] || [Quote from the vendor's engineer or commercial director, 1–2 sentences]
+[Должность], ведущий вендор робототехники || [Job title], leading robotics vendor
+Данные и технологии || Data and technology
+Рекомендациям можно верить, данным ничего не угрожает || Recommendations you can trust, data that stays safe
+Ваш каталог работает на вас, а не на конкурентов. || Your catalog works for you, not for your competitors.
+Инженер проверяет подбор за минуты, а не пересчитывает с нуля. || Your engineer checks the selection in minutes instead of redoing it from scratch.
+Каталог, КП и заявки на серверах в РФ, отечественный стек. || Catalog, quotes and requests on servers in Russia, Russian technology stack.
+Учится на правках ваших инженеров || Learns from your engineers' edits
+Чем больше заявок вы обработали, тем точнее подбор по вашей номенклатуре. || The more requests you process, the more accurate the selection for your product range.
+Извлечение параметров F1 0,88 · ранжирование nDCG@5 0,75 · RuBERT, CatBoost, Qdrant, GigaChat || Parameter extraction F1 0.88 · ranking nDCG@5 0.75 · RuBERT, CatBoost, Qdrant, GigaChat
+Частые вопросы вендоров || FAQ for vendors
+Что входит в подписку, кроме заявок? || What does the subscription include besides leads?
+Автоматизация пресейла по всем вашим запросам: ТЗ из описания клиента, подбор оборудования из вашего каталога, расчёт окупаемости и ТКП по вашему шаблону. Заявки от производств, которых приводим мы, — дополнительно. || Presales automation for all your requests: a spec from the customer's description, equipment selection from your catalog, a payback estimate and a proposal in your template. Requests from manufacturers we bring come on top.
+Можно обрабатывать запросы своих клиентов? || Can I process my own customers' requests?
+Да. Загружаете запрос клиента в кабинет, платформа готовит ТЗ, подбор и ТКП. Комиссии за своих клиентов нет. || Yes. Upload the customer's request to your account and the platform prepares the spec, selection and proposal. There's no commission on your own customers.
+Как работает комиссия 1%? || How does the 1% commission work?
+Только со сделок с клиентами, которых привели мы. За своих клиентов не платите, даже если готовили ТЗ и ТКП в платформе. Нет сделки — нет комиссии. Условия фиксируются в договоре. || It applies only to deals with customers we brought. You don't pay for your own customers, even if you prepared the spec and proposal in the platform. No deal, no commission. The terms are set out in the contract.
+Что входит в бесплатный пилот? || What's included in the free pilot?
+Первый месяц и до 100 запросов: подключение каталога и шаблона ТКП, кабинет для команды, ТЗ, подбор и ТКП по вашим запросам и заявки от нас. Без обязательств: если не подойдёт, просто не продлеваете. || The first month and up to 100 requests: catalog and proposal template setup, an account for your team, specs, selections and proposals for your requests, and requests from us. No commitment: if it's not a fit, simply don't renew.
+Сколько стоит после пилота? || How much does it cost after the pilot?
+От 99 000 ₽ в месяц. Цена зависит от числа каталогов, пользователей и лимита запросов, при оплате за 3 месяца дешевле. Полный прайс пришлём по запросу. || From ₽99,000 per month. The price depends on the number of catalogs, users and the request limit; paying for 3 months is cheaper. We'll send full pricing on request.
+Как подключить каталог и шаблон ТКП? || How do I connect my catalog and proposal template?
+Передайте каталог, шаблон и примеры ТКП и ТЗ в том виде, в котором они у вас есть. Настройку берём на себя: от вас один созвон, от нас 14 дней на запуск. || Send us your catalog, template and sample proposals and specs in whatever form you have them. We handle the setup: one call from you, 14 days to launch from us.
+Можно ли связать с CRM, ERP или MES? || Can it connect to CRM, ERP or MES?
+Да, на Профессиональном тарифе есть обмен данными через REST API. Интеграции под ваши задачи — на Корпоративном. || Yes, the Professional plan includes data exchange via REST API. Custom integrations are available on the Enterprise plan.
+Для вендоров и интеграторов || For vendors and integrators
+Получить прайс и условия пилота || Get pricing and pilot terms
+Оставьте контакт: пришлём прайс и покажем, как платформа пишет ТЗ и ТКП на вашем каталоге. || Leave your contact: we'll send pricing and show how the platform writes specs and proposals on your catalog.
+Компания или сайт || Company or website
+Как удобнее связаться || How should we contact you
+Без обязательств · ответим за 1 рабочий день || No commitment · reply within 1 business day
+Заявка у нас || We've got your request
+Пришлём прайс в течение рабочего дня. Расскажите чуть больше, чтобы пилот сразу был на ваших позициях. || We'll send pricing within one business day. Tell us a bit more so the pilot runs on your own items from day one.
+Кто вы || You are
+Вендор || Vendor
+Интегратор || Integrator
+Дистрибьютор || Distributor
+Должность || Job title
+Что в каталоге || What's in your catalog
+Например: коботы и SCARA, около 200 позиций, интеграция ячеек для станков || For example: cobots and SCARA robots, about 200 items, machine tending cell integration
+Пришлём прайс и условия пилота || We send pricing and pilot terms
+В течение рабочего дня: в мессенджер, на почту или позвоним, как вы выбрали || Within one business day: by messenger, email or phone, as you chose
+Покажем платформу на вашем каталоге || We show the platform on your catalog
+ТЗ, подбор и ТКП на ваших реальных позициях || Specs, selections and proposals on your real items
+Настроим кабинет за 14 дней и запустим пилот || We set up your account in 14 days and launch the pilot
+Производствам || For manufacturers
+Получить прайс и пилот || Get pricing and a pilot
+Политика обработки персональных данных | СтрAIтег || Personal Data Processing Policy | StrAItegist
+Политика обработки персональных данных ООО «Архада» || Personal data processing policy of Arkhada LLC
+Политика обработки персональных данных || Personal Data Processing Policy
+[Шаблон. Текст политики должен подготовить юрист по 152-ФЗ: оператор ООО «Архада», ИНН [ИНН], ОГРН [ОГРН], адрес; какие данные собираются (контакт, мессенджер, описание задачи, компания, регион, роль); цели обработки; сроки хранения; передача третьим лицам (вендорам — только с согласия пользователя); хранение на серверах в РФ; порядок отзыва согласия: info@straitegist.ru.] || [Template. The policy text must be prepared by a lawyer under Russian Federal Law No. 152-FZ: operator Arkhada LLC, TIN [TIN], PSRN [PSRN], address; data collected (contact, messenger, task description, company, region, role); purposes of processing; retention periods; transfer to third parties (to vendors only with the user's consent); storage on servers in Russia; how to withdraw consent: info@straitegist.ru.]
+← На главную || ← Back to home
+Ткань в пресс || Fabric into press
+Нужно автоматизировать укладку пропитанной ткани в вырубной пресс и извлечение готовых шайб. Сейчас 1 000 изделий в смену, позже до 2 000. Прессов четыре, рабочий стол хотим сохранить. || We need to automate loading impregnated fabric into a die-cutting press and removing the finished washers. Currently 1,000 parts per shift, later up to 2,000. There are four presses, and we want to keep the existing work table.
+Операция || Operation
+Укладка и извлечение || Loading and unloading
+Материал || Material
+Пропитанная ткань || Impregnated fabric
+Объём || Volume
+1 000–2 000 шт./смену || 1,000–2,000 parts/shift
+Оборудование || Equipment
+4 вырубных пресса || 4 die-cutting presses
+Точность || Accuracy
+Рифление по пресс-форме || Ribbing must match the die
+Ограничение || Constraint
+Сохранить стол || Keep the work table
+6 кг, вылет 600 мм, ±0,02 мм, 4 оси || 6 kg, 600 mm reach, ±0.02 mm, 4 axes
+Точность укладки и темп до 2 000 шт. в смену, компактно встаёт в центр стола || Placement accuracy and a rate of up to 2,000 parts per shift; fits compactly in the center of the table
+Класс оборудования || Equipment class
+Быстрее, но рабочей зоны мало для четырёх прессов || Faster, but the work envelope is too small for four presses
+Справится, но лишние оси и выше цена || Would work, but with extra axes and a higher price
+Поставщики SCARA-роботов || SCARA robot suppliers
+Есть модели с вылетом 600 мм и точностью ±0,02 мм || Offer models with 600 mm reach and ±0.02 mm accuracy
+Интеграторы ячеек для прессов || Press cell integrators
+Референсы по загрузке вырубных и штамповочных прессов || References in die-cutting and stamping press loading
+3,8–5,9 млн ₽ || ₽3.8–5.9M
+4–6 мес. || 4–6 mo.
+11–16 мес. || 11–16 mo.
+Окупаемость при высвобождении 4 операторов и ФОТ 90 тыс. ₽ в месяц на человека. || Payback assumes 4 operators freed up at a labor cost of ₽90,000 per person per month.
+Мешки на паллеты || Bags onto pallets
+В конце линии вручную укладываем мешки с сухой смесью по 25 кг на паллеты. Около 600 мешков в час, по два человека в смену, работаем в три смены. || At the end of the line we stack 25 kg bags of dry mix onto pallets by hand. About 600 bags per hour, two people per shift, three shifts.
+Паллетизация мешков || Bag palletizing
+Груз || Load
+Мешки по 25 кг || 25 kg bags
+Темп || Rate
+≈ 600 шт./час || ≈ 600 per hour
+Режим || Schedule
+3 смены || 3 shifts
+Сейчас || Now
+2 оператора в смену || 2 operators per shift
+Место || Location
+Конец линии || End of line
+Эйдос Робототехника A70-2180 || Eidos Robotics A70-2180
+70 кг, вылет 2 180 мм, 6 осей, IP54 || 70 kg, 2,180 mm reach, 6 axes, IP54
+Запас по массе с учётом захвата, вылета хватает на две паллеты || Payload margin including the gripper; reach covers two pallets
+Завод Роботов RusRobot RR 120-2900 || Zavod Robotov RusRobot RR 120-2900
+120 кг, вылет 2 900 мм || 120 kg, 2,900 mm reach
+Больший запас, если позже появятся мешки по 50 кг || More margin if 50 kg bags come later
+Колонный паллетайзер || Column palletizer
+Дешевле, но работает медленнее робота || Cheaper, but slower than a robot
+Поставщики паллетайзеров || Palletizer suppliers
+Роботы грузоподъёмностью от 50 кг, вилочные захваты для мешков || Robots with 50 kg+ payload, fork grippers for bags
+Интеграторы упаковочных линий || Packaging line integrators
+Ограждение ячейки, световой барьер, пусконаладка на месте || Cell fencing, light curtain, on-site commissioning
+7–10 млн ₽ || ₽7–10M
+3–5 мес. || 3–5 mo.
+15–21 мес. || 15–21 mo.
+Окупаемость при высвобождении 6 операторов и ФОТ 80 тыс. ₽ в месяц на человека. || Payback assumes 6 operators freed up at a labor cost of ₽80,000 per person per month.
+Загрузка станка ЧПУ || CNC machine tending
+Токарный станок с ЧПУ, оператор вручную ставит заготовки до 8 кг. Цикл обработки около 4 минут. Хотим, чтобы станок работал и ночью без людей. || A CNC lathe where the operator loads blanks of up to 8 kg by hand. The machining cycle is about 4 minutes. We want the machine to run at night without people.
+Загрузка станка || Machine loading
+Заготовка || Blank
+До 8 кг || Up to 8 kg
+Цикл || Cycle
+≈ 4 мин || ≈ 4 min
+Ночь без оператора || Unattended night shift
+Токарный ЧПУ || CNC lathe
+Требование || Requirement
+Рядом с людьми днём || Works next to people by day
+Коллаборативный робот, 10–12 кг || Collaborative robot, 10–12 kg
+Работает рядом с людьми без ограждения, быстро перенастраивается || Works next to people without fencing, quick changeover
+Промышленный 6-осевой, 12–20 кг || Industrial 6-axis robot, 12–20 kg
+Быстрее, но нужны ограждение и больше места || Faster, but needs fencing and more space
+Портальный загрузчик || Gantry loader
+Хорош для больших серий, сложно встроить в действующий участок || Good for large batches, hard to fit into an existing area
+Поставщики коботов || Cobot suppliers
+Коллаборативные роботы 10–12 кг для работы рядом с людьми || 10–12 kg collaborative robots for work next to people
+Интеграторы ячеек для станков || Machine tending cell integrators
+Опыт роботизации загрузки токарных станков с ЧПУ || Experience automating CNC lathe loading
+3,5–5 млн ₽ || ₽3.5–5M
+2–4 мес. || 2–4 mo.
+12–18 мес. || 12–18 mo.
+Окупаемость за счёт ночной смены без оператора: станок работает на треть дольше. || Payback comes from an unattended night shift: the machine runs a third longer per day.
+Клиент, которого привёл СтрAIтег · описание задачи || Customer brought by StrAItegist · task description
+±0,02 мм, 4 оси, вакуумный захват || ±0.02 mm, 4 axes, vacuum gripper
+Альтернатива другого производителя || Alternative from another manufacturer
+Ваш клиент · письмо на почту отдела продаж || Your customer · email to the sales team
+Робот-паллетайзер, 70 кг || Palletizing robot, 70 kg
+Вылет 2 180 мм, 6 осей, IP54 || 2,180 mm reach, 6 axes, IP54
+Робот 120 кг, вылет 2 900 мм || 120 kg robot, 2,900 mm reach
+Ваш клиент · запрос с сайта || Your customer · website inquiry
+Без ограждения, двойной захват || No fencing, double gripper
+Под ключ || Turnkey
+Срок внедрения || Implementation
+Платформа разбирает запрос || Platform is analyzing the request
+ТКП готово к отправке || Proposal ready to send
+Разбираю задачу || Analyzing the task
+Подбор готов || Selection ready
+ваш каталог || your catalog
+соответствие || fit
+ТЗ в PDF || Spec as PDF
+Источники по каждой цифре || Sources for every figure
+ТЗ: параметры извлечены автоматически || Spec: parameters extracted automatically
+Разбираю запрос клиента и составляю ТЗ || Reading the customer request and writing the spec
+Подобрано из вашего каталога || Selected from your catalog
+Ищу подходящие позиции в вашем каталоге || Searching your catalog for matching items
+Считаю стоимость, сроки и окупаемость || Estimating cost, timeline and payback
+Готово к отправке || Ready to send
+Собираю ТКП по вашему шаблону || Building the proposal in your template
+Что мы поняли из описания || What we understood from the description
+Извлекаю операцию, массу, темп и ограничения || Extracting the operation, weight, rate and constraints
+3 варианта от разных производителей || 3 options from different manufacturers
+Сравниваю каталоги производителей по требованиям || Comparing manufacturer catalogs against the requirements
+· по номенклатуре, референсам и региону || · by product range, references and region
+Ищу вендоров и интеграторов с похожими проектами || Looking for vendors and integrators with similar projects
+Стоимость и окупаемость || Cost and payback
+Считаю бюджет под ключ, сроки и окупаемость || Estimating turnkey budget, timeline and payback
+ Это пример. По вашей задаче подберём точно. ||  This is an example. For your task we'll make an exact selection.
+Хотите такой же подбор по вашей задаче? || Want a selection like this for your task?
+Оборудование и вендоры за 1 рабочий день, бесплатно || Equipment and vendors in 1 business day, free
+Похожий пример из демо:  || Closest demo example:
+. По вашей задаче подберём точно. || . For your task we'll make an exact selection.
+Этого запроса нет среди примеров демо || This request isn't among the demo examples
+На пилоте платформа разберёт любой запрос ваших клиентов по вашему каталогу. || In the pilot, the platform analyzes any of your customers' requests against your catalog.
+Этой задачи нет среди примеров демо || This task isn't among the demo examples
+Отправьте её нам: подберём оборудование и вендоров и пришлём результат за 1 рабочий день, бесплатно. || Send it to us: we'll select equipment and vendors and send you the result within 1 business day, free.
+Отправить мою задачу || Send my task
+Ник или телефон в Telegram || Telegram username or phone
+@username или +7 900 000-00-00 || @username or +7 900 000-00-00
+Укажите ник в Telegram (@username) или номер телефона. || Enter your Telegram username (@username) or phone number.
+Телефон, привязанный к MAX || Phone number linked to MAX
+Укажите номер телефона, например +7 900 000-00-00. || Enter a phone number, for example +7 900 000-00-00.
+Телефон в WhatsApp || WhatsApp phone number
+Телефон для звонка || Phone number for a call
+Рабочая почта || Work email
+Укажите почту, например name@company.ru. || Enter an email address, for example name@company.com.
+Не получилось отправить. Напишите нам на  || Couldn't send. Email us at
+ или в Telegram @archadasupport. ||  or message @archadasupport on Telegram.
+Готово, спасибо! || Done, thank you!
+СтрAIтег для производств || StrAItegist for manufacturers
+СтрAIтег для вендоров и интеграторов || StrAItegist for vendors and integrators
+Подбор промышленного оборудования и поставщика || Industrial equipment and supplier selection
+Подбор промышленного оборудования || Industrial equipment selection
+По описанию задачи производства за 1 рабочий день готовим ТЗ на оборудование, 3 варианта оборудования разных производителей и вендоров, которые его поставят и внедрят. Станки ЧПУ, промышленные роботы, автоматизация и роботизация производства. || Based on a manufacturer's task description, within 1 business day we prepare an equipment spec, 3 equipment options from different manufacturers and the vendors who will deliver and install it. CNC machines, industrial robots, factory automation and robotics.
+Россия || Russia
+Промышленные предприятия || Industrial companies
+Бесплатно для производств || Free for manufacturers
+Заявки от производств и автоматизация ТКП для вендоров и интеграторов || Leads from manufacturers and proposal automation for vendors and integrators
+Автоматизация пресейла: ТЗ, подбор оборудования по ТЗ из каталога, создание ТКП с помощью ИИ || Presales automation: specs, equipment selection from the catalog, AI-generated proposals
+Платформа пишет ТЗ по запросу клиента, подбирает оборудование из каталога вендора и собирает ТКП по его шаблону. Плюс заявки на роботизацию и промышленное оборудование от производств. Первый месяц и 100 запросов бесплатно. || The platform writes a spec from the customer request, selects equipment from the vendor's catalog and builds the proposal in the vendor's template. Plus robotics and industrial equipment requests from manufacturers. First month and 100 requests free.
+Вендоры, интеграторы и дистрибьюторы промышленного оборудования || Industrial equipment vendors, integrators and distributors
+Первый месяц, до 100 запросов || First month, up to 100 requests
+От 99 000 ₽ в месяц, зависит от каталогов, пользователей и лимита запросов || From ₽99,000 per month, depending on catalogs, users and request limit
+месяц || month
+ООО «Архада» || Arkhada LLC
+Москва || Moscow
+name@company.ru || name@company.com
+Язык || Language

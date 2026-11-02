@@ -29,6 +29,7 @@
 - [Для вендоров и интеграторов](https://vendors.straitegist.ru/): платформа автоматизации ТЗ и ТКП и заявки от производств
 - [Платформа СтрAIтег](https://straitegist.ru/): личный кабинет
 - [Политика обработки персональных данных](https://factory.straitegist.ru/privacy/)
+- [English version](https://factory.straitegist.ru/en/)
 
 ## Контакты
 - Почта: info@straitegist.ru
