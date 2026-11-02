@@ -19,7 +19,8 @@ privacy/index.html     — политика обработки ПД (/privacy/ �
 assets/                — стили, скрипт, логотип, превью, шрифты (общие для обоих поддоменов)
 .htaccess              — маршрутизация по поддомену для Apache
 SEO.md                 — ключевые запросы и настройка индексации
-deploy/nginx.conf      — конфиг nginx для своего сервера
+deploy/nginx.conf      — конфиг nginx (копируется один раз)
+deploy/nginx-site.conf, deploy/nginx-maps.conf — маршруты, подключаются из репозитория
 robots.txt, sitemap.xml                  — для factory
 robots-vendors.txt, sitemap-vendors.xml  — для vendors (отдаются как /robots.txt и /sitemap.xml)
 ```
@@ -57,13 +58,15 @@ sudo nginx -t && sudo systemctl reload nginx
 sudo certbot --nginx -d factory.straitegist.ru -d vendors.straitegist.ru --redirect
 ```
 
+`deploy/nginx.conf` копируется **только один раз**, при первой установке: certbot дописывает в скопированный файл HTTPS. Повторное копирование стирает HTTPS, и браузер покажет чужой сертификат (например, от другого сайта на этом сервере).
+
 Обновить сайт после изменений в репозитории:
 
 ```bash
-sudo git -C /var/www/straitegist-landings pull
+sudo git -C /var/www/straitegist-landings pull && sudo nginx -t && sudo systemctl reload nginx
 ```
 
-nginx перечитывать не нужно, файлы отдаются сразу. Перезагрузка нужна, только если менялся `deploy/nginx.conf`.
+Маршруты лежат в `deploy/nginx-site.conf` и `deploy/nginx-maps.conf`. nginx подключает их прямо из репозитория, поэтому они обновляются через `git pull`.
 
 ## Перед запуском: обязательные шаги
 
