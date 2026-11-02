@@ -40,7 +40,7 @@ RewriteCond %{HTTP_HOST} ^vendors\. [NC]
 RewriteRule ^sitemap\.xml$ sitemap-vendors.xml [L]
 
 # Служебные файлы сайта наружу не отдаём
-RewriteRule ^(README\.md|SEO\.md|\.git(/.*)?|\.gitignore)$ - [F,L]
+RewriteRule ^(README\.md|SEO\.md|deploy/.*|\.git(/.*)?|\.gitignore)$ - [F,L]
 </IfModule>
 
 <IfModule mod_headers.c>

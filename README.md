@@ -19,6 +19,7 @@ privacy/index.html     — политика обработки ПД (/privacy/ �
 assets/                — стили, скрипт, логотип, превью, шрифты (общие для обоих поддоменов)
 .htaccess              — маршрутизация по поддомену для Apache
 SEO.md                 — ключевые запросы и настройка индексации
+deploy/nginx.conf      — конфиг nginx для своего сервера
 robots.txt, sitemap.xml                  — для factory
 robots-vendors.txt, sitemap-vendors.xml  — для vendors (отдаются как /robots.txt и /sitemap.xml)
 ```
@@ -43,36 +44,26 @@ robots-vendors.txt, sitemap-vendors.xml  — для vendors (отдаются к
 Оба поддомена должны смотреть в один и тот же каталог: корень этого репозитория.
 
 - **Apache (Beget, Timeweb, REG.RU и т.п.)**: в панели добавьте поддомены `factory` и `vendors` и укажите обоим один каталог. Маршрутизацию сделает `.htaccess`. Выпустите SSL-сертификаты (Let's Encrypt) на оба поддомена и включите в панели редирект на HTTPS.
-- **nginx**:
+- **Свой сервер (Ubuntu + nginx)**: готовый конфиг `deploy/nginx.conf`, инструкция ниже.
 
-```nginx
-server {
-  listen 443 ssl http2;
-  server_name factory.straitegist.ru vendors.straitegist.ru;
-  root /var/www/straitegist-site;
-  index index.html;
-  # ssl_certificate ... (certbot --nginx -d factory.straitegist.ru -d vendors.straitegist.ru)
+### Запуск на своём сервере (Ubuntu + nginx)
 
-  location ~ ^/(README\.md|SEO\.md|\.git) { return 404; }
-
-  set $site factory;
-  if ($host = vendors.straitegist.ru) { set $site vendors; }
-
-  location = / {
-    if ($site = vendors) { rewrite ^ /vendors/index.html last; }
-  }
-  location ^~ /vendors {
-    if ($request_uri ~ ^/vendors) { return 301 https://vendors.straitegist.ru/$is_args$args; }
-  }
-  location = /robots.txt  { if ($site = vendors) { rewrite ^ /robots-vendors.txt last; } }
-  location = /sitemap.xml { if ($site = vendors) { rewrite ^ /sitemap-vendors.xml last; } }
-}
-server {
-  listen 80;
-  server_name factory.straitegist.ru vendors.straitegist.ru;
-  return 301 https://$host$request_uri;
-}
+```bash
+sudo apt update && sudo apt install -y nginx git certbot python3-certbot-nginx
+sudo git clone https://github.com/CryF1sh/StrAIteg-site.git /var/www/straitegist-landings
+sudo cp /var/www/straitegist-landings/deploy/nginx.conf /etc/nginx/sites-available/straitegist-landings
+sudo ln -s /etc/nginx/sites-available/straitegist-landings /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl reload nginx
+sudo certbot --nginx -d factory.straitegist.ru -d vendors.straitegist.ru --redirect
 ```
+
+Обновить сайт после изменений в репозитории:
+
+```bash
+sudo git -C /var/www/straitegist-landings pull
+```
+
+nginx перечитывать не нужно, файлы отдаются сразу. Перезагрузка нужна, только если менялся `deploy/nginx.conf`.
 
 ## Перед запуском: обязательные шаги
 
