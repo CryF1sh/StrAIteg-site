@@ -35,7 +35,7 @@ def alternates(ru, en):
     return ('<link rel="alternate" hreflang="ru" href="%s">\n<link rel="alternate" hreflang="en" href="%s">\n<link rel="alternate" hreflang="x-default" href="%s">\n' % (ru, en, ru))
 def add_lang_ui(s, ru, en, cur):
     s = re.sub(r'<link rel="alternate" hreflang[^>]*>\n', '', s)
-    s = re.sub(r'<div class="lang"[^>]*>.*?</div>', '', s)
+    s = re.sub(r'<div class="lang"[^>]*>.*?</div>\n?', '', s)
     s = re.sub(r'<a class="mlang"[^>]*>[^<]*</a>\n?', '', s)
     s = s.replace('<link rel="canonical"', alternates(ru, en) + '<link rel="canonical"', 1)
     if '<a class="login"' in s:
@@ -60,6 +60,14 @@ for ru_f, en_f, ru_u, en_u in PAGES:
         for n in d.get('@graph', []):
             if n.get('@type') == 'WebSite': n['inLanguage'] = 'en'; n['url'] = en_u; n['@id'] = en_u + '#site'
             if n.get('@type') == 'Service': n['url'] = en_u; n['@id'] = en_u + '#service'
+            # Английская версия: цены в долларах (тариф vendors: от $1,290 в месяц)
+            if n.get('@type') == 'Service':
+                offers = n.get('offers'); offers = offers if isinstance(offers, list) else [offers]
+                for o in offers:
+                    if not o: continue
+                    o['priceCurrency'] = 'USD'
+                    ps = o.get('priceSpecification')
+                    if ps: ps['priceCurrency'] = 'USD'; ps['minPrice'] = '1290' if ps.get('minPrice') == '99000' else ps.get('minPrice')
             if n.get('@type') == 'FAQPage': n['@id'] = en_u + '#faq'
         return '<script type="application/ld+json">\n' + json.dumps(d, ensure_ascii=False) + '\n</script>'
     e = re.sub(r'<script type="application/ld\+json">\n(.*?)\n</script>', ld, e, flags=re.S)

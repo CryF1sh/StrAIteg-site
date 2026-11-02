@@ -37,8 +37,7 @@ def translate(s, T, missing):
             res.append(tag)
         else:
             t = text.strip()
-            if CYR.search(t):
-                if t in T: text = text.replace(t, T[t])
-                else: missing.add(t)
+            if t in T: text = text.replace(t, T[t])
+            elif CYR.search(t): missing.add(t)
             res.append(text)
     return restore(''.join(res), blocks)
