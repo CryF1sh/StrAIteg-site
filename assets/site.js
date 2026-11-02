@@ -113,8 +113,93 @@
     return box;
   }
 
-  function renderPlant(out, k) {
+  /* ----- Процесс по шагам: каждый шаг «думает», потом показывает результат ----- */
+  var REDUCE = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var STATUS = AUDIENCE === "vendor"
+    ? { idle: "Новый запрос", run: "Платформа разбирает запрос", done: "ТКП готово к отправке" }
+    : { idle: "Готов к работе", run: "Разбираю задачу", done: "Подбор готов" };
+  var token = 0;
+
+  function setStatus(state) {
+    var s = $("#demo-status"); if (!s) return;
+    s.setAttribute("data-state", state);
+    var t = s.querySelector("span"); if (t) t.textContent = STATUS[state];
+  }
+  function wait(ms) { return new Promise(function (r) { setTimeout(r, REDUCE ? 0 : ms); }); }
+  function stagger(root) {
+    $$(".params > div, .opts > li, .vend > li, .econ > div, .files > li", root).forEach(function (n, i) { n.style.setProperty("--i", i); });
+  }
+  function stage(n, title, sub, doing, body) {
+    var root = el("div", "stg wait"), h = el("p", "stg-h"), num = el("span", "n", String(n));
+    h.appendChild(num); h.appendChild(document.createTextNode(title));
+    if (sub) { h.appendChild(document.createTextNode(" ")); h.appendChild(el("span", "sub2", sub)); }
+    root.appendChild(h); root.appendChild(el("p", "doing", doing));
+    var bd = el("div", "bd"); bd.appendChild(body); root.appendChild(bd);
+    return { root: root, num: num, n: n };
+  }
+  function quote(src, text) {
+    var q = el("p", "quote-task"); q.appendChild(el("small", null, src));
+    var tx = el("span", "qt-tx", text); q.appendChild(tx);
+    return { root: q, tx: tx, text: text };
+  }
+  function frag(nodes) { var f = el("div"); nodes.forEach(function (n) { if (n) f.appendChild(n); }); return f; }
+
+  function play(out, q, stages, tail, animate) {
+    var my = ++token;
+    out.innerHTML = "";
+    out.appendChild(q.root);
+    stages.forEach(function (s) { out.appendChild(s.root); stagger(s.root); });
+    function finish(s) {
+      s.root.className = "stg ok"; s.num.textContent = "✓";
+      $$(".bar span", s.root).forEach(function (b) { b.style.width = b.getAttribute("data-w") + "%"; });
+    }
+    function showTail() { if (tail) { tail.classList.add("demo-tail"); out.appendChild(tail); } }
+    if (animate === "pending") { setStatus("idle"); return; }
+    if (!animate || REDUCE) {
+      stages.forEach(finish); showTail(); setStatus("done"); return;
+    }
+    setStatus("run");
+    (async function () {
+      q.root.classList.add("typing"); q.tx.textContent = "";
+      for (var c = 0; c < q.text.length; c += 3) {
+        if (my !== token) return;
+        q.tx.textContent = q.text.slice(0, c + 3);
+        await wait(14);
+      }
+      q.root.classList.remove("typing");
+      var pause = [950, 1300, 950, 850];
+      for (var i = 0; i < stages.length; i++) {
+        if (my !== token) return;
+        stages[i].root.className = "stg busy";
+        await wait(pause[i] || 900);
+        if (my !== token) return;
+        finish(stages[i]);
+        await wait(180);
+      }
+      if (my !== token) return;
+      showTail(); setStatus("done");
+    })();
+  }
+
+  function optList(list, vendor) {
+    var ul = el("ul", "opts");
+    list.forEach(function (o, i) {
+      var best = vendor ? o[3] : i === 0;
+      var li = el("li", "opt" + (best ? " best" : ""));
+      var b = el("b", null, o[0]); if (vendor && o[3]) b.appendChild(el("span", "tag", "ваш каталог"));
+      li.appendChild(b); li.appendChild(el("span", "spec", o[1]));
+      var f = el("div", "fit"); f.appendChild(el("strong", null, o[2] + "%")); f.appendChild(el("small", null, "соответствие"));
+      var bar = el("div", "bar"), bs = el("span"); bs.style.width = "0"; bs.setAttribute("data-w", o[2]); bar.appendChild(bs); f.appendChild(bar);
+      li.appendChild(f);
+      if (!vendor) li.appendChild(el("span", "why", o[3]));
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+
+  function renderPlant(out, k, animate) {
     if (k === "other") {
+      ++token; out.innerHTML = ""; setStatus("idle");
       out.appendChild(plaque("Вашей задачи нет среди примеров?",
         "Это нормально: пример лишь показывает формат. Отправьте свою задачу: подберём оборудование и вендоров вручную и пришлём результат за 1 рабочий день.",
         "Отправить мою задачу"));
@@ -122,61 +207,59 @@
       return;
     }
     var d = PLANT[k];
-    var q = el("p", "quote-task"); q.appendChild(el("small", null, "Задача словами производства")); q.appendChild(document.createTextNode(d.text)); out.appendChild(q);
-    out.appendChild(lbl("Что мы поняли из описания")); out.appendChild(params(d.params));
-    out.appendChild(lbl("3 варианта от разных производителей"));
-    var ul = el("ul", "opts");
-    d.opts.forEach(function (o, i) {
-      var li = el("li", "opt" + (i === 0 ? " best" : ""));
-      li.appendChild(el("b", null, o[0])); li.appendChild(el("span", "spec", o[1]));
-      var f = el("div", "fit"); f.appendChild(el("strong", null, o[2] + "%")); f.appendChild(el("small", null, "соответствие"));
-      var bar = el("div", "bar"), bs = el("span"); bs.style.width = o[2] + "%"; bar.appendChild(bs); f.appendChild(bar);
-      li.appendChild(f); li.appendChild(el("span", "why", o[3])); ul.appendChild(li);
-    });
-    out.appendChild(ul);
-    out.appendChild(lbl("Кто поставит и внедрит", "· по номенклатуре, референсам и региону"));
     var vl = el("ul", "vend");
     d.vendors.forEach(function (v) {
       var li = el("li"); li.appendChild(el("span", "ic", "handshake"));
       var s = el("span"); s.appendChild(el("b", null, v[0])); s.appendChild(el("span", "w", v[1])); li.appendChild(s); vl.appendChild(li);
     });
-    out.appendChild(vl);
-    out.appendChild(lbl("Дополнительно: стоимость и окупаемость")); out.appendChild(econ(d, "pay"));
-    out.appendChild(el("p", "note", d.note + " Это пример. По вашей задаче подберём точно."));
-    out.appendChild(plaque("Хотите такой же подбор по вашей задаче?", "Оборудование и вендоры за 1 рабочий день, бесплатно", "Подобрать оборудование"));
+    var stages = [
+      stage(1, "Что мы поняли из описания", null, "Извлекаю операцию, массу, темп и ограничения", params(d.params)),
+      stage(2, "3 варианта от разных производителей", null, "Сравниваю каталоги производителей по требованиям", optList(d.opts, false)),
+      stage(3, "Кто поставит и внедрит", "· по номенклатуре, референсам и региону", "Ищу вендоров и интеграторов с похожими проектами", vl),
+      stage(4, "Стоимость и окупаемость", null, "Считаю бюджет под ключ, сроки и окупаемость", frag([econ(d, "pay"), el("p", "note", d.note + " Это пример. По вашей задаче подберём точно.")]))
+    ];
+    play(out, quote("Задача словами производства", d.text), stages,
+      plaque("Хотите такой же подбор по вашей задаче?", "Оборудование и вендоры за 1 рабочий день, бесплатно", "Подобрать оборудование"), animate);
   }
 
-  function renderVendor(out, k) {
+  function renderVendor(out, k, animate) {
     var d = VENDOR[k];
-    var q = el("p", "quote-task"); q.appendChild(el("small", null, d.src)); q.appendChild(document.createTextNode(d.text)); out.appendChild(q);
-    out.appendChild(lbl("ТЗ: параметры, извлечённые автоматически")); out.appendChild(params(d.params));
-    out.appendChild(lbl("Подобрано из вашего каталога"));
-    var ul = el("ul", "opts");
-    d.opts.forEach(function (o) {
-      var li = el("li", "opt" + (o[3] ? " best" : ""));
-      var b = el("b", null, o[0]); if (o[3]) b.appendChild(el("span", "tag", "ваш каталог"));
-      li.appendChild(b); li.appendChild(el("span", "spec", o[1]));
-      var f = el("div", "fit"); f.appendChild(el("strong", null, o[2] + "%")); f.appendChild(el("small", null, "соответствие")); li.appendChild(f);
-      ul.appendChild(li);
+    var files = el("ul", "files");
+    [["description", "ТЗ в PDF"], ["request_quote", "ТКП по вашему шаблону"], ["link", "Источники по каждой цифре"]].forEach(function (f) {
+      var li = el("li"); li.appendChild(el("span", "ic", f[0])); li.appendChild(document.createTextNode(f[1])); files.appendChild(li);
     });
-    out.appendChild(ul);
-    out.appendChild(lbl("Обоснование для клиента")); out.appendChild(econ(d, ""));
+    var stages = [
+      stage(1, "ТЗ: параметры извлечены автоматически", null, "Разбираю запрос клиента и составляю ТЗ", params(d.params)),
+      stage(2, "Подобрано из вашего каталога", null, "Ищу подходящие позиции в вашем каталоге", optList(d.opts, true)),
+      stage(3, "Обоснование для клиента", null, "Считаю стоимость, сроки и окупаемость", econ(d, "")),
+      stage(4, "Готово к отправке", null, "Собираю ТКП по вашему шаблону", files)
+    ];
+    play(out, quote(d.src, d.text), stages, null, animate);
   }
 
-  function renderDemo() {
+  function renderDemo(animate) {
     var box = $("#chips"), out = $("#demo-out");
     if (!box || !out) return;
     box.innerHTML = "";
     KEYS.forEach(function (k) {
       var b = el("button", "chip" + (k === current ? " on" : ""), k === "other" ? "Моя задача другая" : DATA[k].label);
       b.type = "button"; b.setAttribute("aria-pressed", String(k === current));
-      b.addEventListener("click", function () { current = k; renderDemo(); goal("demo_preset", { preset: k, audience: AUDIENCE }); });
+      b.addEventListener("click", function () { current = k; renderDemo(true); goal("demo_preset", { preset: k, audience: AUDIENCE }); });
       box.appendChild(b);
     });
-    out.innerHTML = "";
-    if (AUDIENCE === "vendor") renderVendor(out, current); else renderPlant(out, current);
+    if (AUDIENCE === "vendor") renderVendor(out, current, animate); else renderPlant(out, current, animate);
   }
-  renderDemo();
+
+  /* Первый показ: шаги видны, а «разбор» запускается, когда демо появляется на экране */
+  (function () {
+    var demo = $("#demo"); if (!demo) return;
+    if (REDUCE || !("IntersectionObserver" in window)) { renderDemo(false); return; }
+    renderDemo("pending");
+    var io = new IntersectionObserver(function (en) {
+      if (en.some(function (e) { return e.isIntersecting; })) { io.disconnect(); renderDemo(true); }
+    }, { threshold: 0.35 });
+    io.observe(demo);
+  })();
 
   /* ===================== Заявки ===================== */
   function utm() {
@@ -205,14 +288,49 @@
   function msg(text, cls) { var m = $("#form-msg"); if (m) { m.className = "msg " + (cls || ""); m.textContent = text; } }
 
   var f1 = $("#lead-form");
+
+  /* Поле контакта подстраивается под выбранный способ связи */
+  var CH = {
+    telegram: { l: "Ник или телефон в Telegram", ph: "@username или +7 900 000-00-00", t: "text", im: "text", ac: "username",
+                err: "Укажите ник в Telegram (@username) или номер телефона." },
+    max:      { l: "Телефон, привязанный к MAX", ph: "+7 900 000-00-00", t: "tel", im: "tel", ac: "tel",
+                err: "Укажите номер телефона, например +7 900 000-00-00." },
+    whatsapp: { l: "Телефон в WhatsApp", ph: "+7 900 000-00-00", t: "tel", im: "tel", ac: "tel",
+                err: "Укажите номер телефона, например +7 900 000-00-00." },
+    phone:    { l: "Телефон для звонка", ph: "+7 900 000-00-00", t: "tel", im: "tel", ac: "tel",
+                err: "Укажите номер телефона, например +7 900 000-00-00." },
+    email:    { l: "Рабочая почта", ph: "name@company.ru", t: "email", im: "email", ac: "email",
+                err: "Укажите почту, например name@company.ru." }
+  };
+  function channel() { var m = f1 && f1.querySelector("input[name=messenger]:checked"); return m && CH[m.value] ? m.value : "telegram"; }
+  function contactOk(m, v) {
+    var digits = v.replace(/\D/g, "").length;
+    if (m === "email") return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+    if (m === "telegram") return /^@?[A-Za-z][A-Za-z0-9_]{4,31}$/.test(v.replace(/^(https?:\/\/)?t\.me\//, "")) || digits >= 10;
+    return digits >= 10;
+  }
+  function applyChannel() {
+    if (!f1 || !f1.contact) return;
+    var c = CH[channel()], inp = f1.contact, lab = inp.id ? $("label[for=\"" + inp.id + "\"]") : null;
+    if (lab) lab.textContent = c.l;
+    inp.setAttribute("placeholder", c.ph); inp.setAttribute("inputmode", c.im); inp.setAttribute("autocomplete", c.ac);
+    try { inp.type = c.t; } catch (e) {}
+    inp.classList.remove("bad"); msg("");
+  }
+  if (f1) {
+    $$("input[name=messenger]", f1).forEach(function (r) { r.addEventListener("change", function () { applyChannel(); if (f1.contact.value) f1.contact.focus(); }); });
+    if (f1.contact) f1.contact.addEventListener("input", function () { f1.contact.classList.remove("bad"); });
+    applyChannel();
+  }
+
   if (f1) f1.addEventListener("submit", function (e) {
     e.preventDefault();
     if (f1.website && f1.website.value) return; // антиспам
     var contact = (f1.contact.value || "").trim();
     var task = f1.task ? f1.task.value.trim() : "";
     var company = f1.company ? f1.company.value.trim() : "";
-    if (!contact || contact.replace(/\D/g, "").length < 5 && contact.indexOf("@") < 0) {
-      msg("Укажите телефон или ник в мессенджере, чтобы мы смогли ответить.", "err"); f1.contact.focus(); return;
+    if (!contactOk(channel(), contact)) {
+      msg(CH[channel()].err, "err"); f1.contact.classList.add("bad"); f1.contact.focus(); return;
     }
     var mess = f1.querySelector("input[name=messenger]:checked");
     var p = base(1);

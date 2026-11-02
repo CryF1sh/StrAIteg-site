@@ -268,6 +268,87 @@ h1.h em{font-style:normal;color:#FF8500}
 /* Иконка не «разъезжается» текстом, пока шрифт иконок не загрузился */
 .ic{width:1em;height:1em;overflow:hidden;white-space:nowrap;flex:none}
 
+/* ---------- Шапка: пункты не переносятся на вторую строку ---------- */
+.top .wrap > *{flex:none}
+.nav a,.login,.top .hd-cta,.aud{white-space:nowrap}
+@media (max-width:1240px){
+.top .wrap{gap:20px}
+.nav{gap:20px}
+.aud-x{display:none}
+}
+@media (max-width:1100px){
+.nav,.top .hd-cta{display:none}
+.burger{display:block;margin-left:0}
+.top .login{margin-left:auto}
+}
+@media (max-width:640px){
+.burger{margin-left:auto}
+}
+
+/* ---------- Демо: процесс подбора по шагам ---------- */
+.demo-head .status{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:#98A2B3;background:rgba(152,162,179,.12);border-radius:999px;padding:5px 11px;white-space:nowrap;transition:color .3s,background-color .3s}
+.status i{width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.demo-head .status[data-state="run"]{color:#FF8500;background:rgba(255,133,0,.12)}
+.demo-head .status[data-state="run"] i{animation:st-pulse 1s ease-in-out infinite}
+.demo-head .status[data-state="done"]{color:#34D399;background:rgba(52,211,153,.12)}
+.stg{padding:14px 0;border-top:1px dashed #383A55}
+.stg:first-of-type{border-top:0;padding-top:4px}
+.stg-h{display:flex;align-items:center;gap:10px;margin:0;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#98A2B3;transition:color .3s}
+.stg-h .n{width:24px;height:24px;border-radius:50%;border:1.5px solid #545C6E;display:inline-grid;place-items:center;font-size:11px;letter-spacing:0;color:#98A2B3;flex:none;transition:background-color .3s,border-color .3s,color .3s}
+.stg-h{flex-wrap:wrap;row-gap:2px}
+.stg-h .sub2{flex-basis:100%;padding-left:34px}
+.stg.wait .stg-h{opacity:.45}
+.stg.busy .stg-h,.stg.ok .stg-h{color:#E5E9EC}
+.stg.busy .n{border-color:#FF8500;border-right-color:transparent;color:transparent;animation:st-spin .8s linear infinite}
+.stg.ok .n{background:#34D399;border-color:#34D399;color:#1D1E2E;font-size:14px;font-weight:800}
+.doing{display:none;margin:8px 0 0 34px;font-size:13px;color:#98A2B3}
+.stg.busy .doing{display:block}
+.doing:after{content:"";display:inline-block;width:1.2em;text-align:left;animation:st-dots 1.2s steps(4) infinite;vertical-align:bottom;overflow:hidden;white-space:nowrap}
+.stg .bd{display:none;margin-top:12px}
+.stg.ok .bd{display:block}
+.stg.ok .bd > *,.stg.ok .params > div,.stg.ok .opts > li,.stg.ok .vend > li,.stg.ok .econ > div,.stg.ok .files > li{animation:st-in .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 70ms)}
+.bar span{transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.quote-task.typing .qt-tx:after{content:"";display:inline-block;width:2px;height:1.05em;margin-left:2px;background:#FF8500;vertical-align:-3px;animation:st-blink .8s steps(1) infinite}
+.demo-tail{animation:st-in .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes st-spin{to{transform:rotate(360deg)}}
+@keyframes st-pulse{50%{opacity:.25}}
+@keyframes st-blink{50%{opacity:0}}
+@keyframes st-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes st-dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+
+/* ---------- Выбор способа связи и роли ---------- */
+.pick{display:grid;gap:10px}
+.pick-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.pick-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pk{position:relative;display:block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.pk input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.pk-c{position:relative;display:flex;flex-direction:column;align-items:center;gap:9px;height:100%;padding:16px 6px 13px;border:1px solid #545C6E;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0) 70%),#1D1E2E;color:#E5E9EC;font-size:13px;font-weight:600;line-height:1.2;text-align:center;transition:border-color .2s,background-color .2s,box-shadow .25s,transform .2s,color .2s}
+.pk-i{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:#292B40;color:#E5E9EC;box-shadow:inset 0 0 0 1px #383A55;transition:background-color .2s,color .2s,box-shadow .2s,transform .25s cubic-bezier(.2,.7,.2,1.4)}
+.pk-i svg{width:21px;height:21px;display:block}
+.pk-i .ic{font-size:22px}
+.pk-c:after{content:"";position:absolute;top:8px;right:8px;width:16px;height:16px;border-radius:50%;background:#FF8500 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4.5 8.2 2.3 2.3 4.7-5' fill='none' stroke='%231D1E2E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;transform:scale(0);transition:transform .25s cubic-bezier(.2,.7,.2,1.4)}
+.pk:hover .pk-c{border-color:#98A2B3;transform:translateY(-1px)}
+.pk input:checked + .pk-c{border-color:#FF8500;color:#fff;background:linear-gradient(180deg,rgba(255,133,0,.16),rgba(255,133,0,.03) 75%),#1D1E2E;box-shadow:inset 0 0 0 1px #FF8500,0 12px 28px -16px rgba(255,133,0,.75)}
+.pk input:checked + .pk-c .pk-i{background:#FF8500;color:#1D1E2E;box-shadow:none;transform:scale(1.06)}
+.pk input:checked + .pk-c:after{transform:scale(1)}
+.pk input:focus-visible + .pk-c{outline:2px solid #FF8500;outline-offset:3px}
+.fld .hint-c{font-size:12px;color:#98A2B3;margin:0}
+.fld input.bad{border-color:#FF5C5C}
+@media (max-width:640px){
+.pick{gap:6px}
+.pk-c{padding:12px 2px 10px;gap:7px;font-size:11.5px;border-radius:12px}
+.pk-i{width:34px;height:34px;border-radius:10px}
+.pk-i svg{width:19px;height:19px}
+.pk-c:after{top:5px;right:5px;width:14px;height:14px;background-size:10px}
+.pk-t{font-size:11px;letter-spacing:-.01em}
+}
+@media (max-width:370px){
+.pick-5{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion:reduce){
+.stg *, .stg, .pk-c, .pk-i, .demo-tail, .status i{animation:none!important;transition:none!important}
+}
+
 @media (max-width:1000px){
 .prices{grid-template-columns:1fr}
 }
