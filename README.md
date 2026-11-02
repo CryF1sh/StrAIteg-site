@@ -18,6 +18,7 @@ vendors/index.html     — лендинг для вендоров (vendors.strai
 privacy/index.html     — политика обработки ПД (/privacy/ на обоих поддоменах)
 assets/                — стили, скрипт, логотип, превью, шрифты (общие для обоих поддоменов)
 .htaccess              — маршрутизация по поддомену для Apache
+SEO.md                 — ключевые запросы и настройка индексации
 robots.txt, sitemap.xml                  — для factory
 robots-vendors.txt, sitemap-vendors.xml  — для vendors (отдаются как /robots.txt и /sitemap.xml)
 ```
@@ -52,7 +53,7 @@ server {
   index index.html;
   # ssl_certificate ... (certbot --nginx -d factory.straitegist.ru -d vendors.straitegist.ru)
 
-  location ~ ^/(README\.md|\.git) { return 404; }
+  location ~ ^/(README\.md|SEO\.md|\.git) { return 404; }
 
   set $site factory;
   if ($host = vendors.straitegist.ru) { set $site vendors; }
