@@ -86,7 +86,7 @@
   };
 
   var DATA = AUDIENCE === "vendor" ? VENDOR : PLANT;
-  var KEYS = AUDIENCE === "vendor" ? ["press", "pallet", "cnc"] : ["press", "pallet", "cnc", "other"];
+  var KEYS = ["press", "pallet", "cnc"];
   var current = "press";
 
   function lbl(text, sub) {
@@ -113,11 +113,16 @@
     return box;
   }
 
-  /* ----- Процесс по шагам: каждый шаг «думает», потом показывает результат ----- */
+  /* ----- Процесс по шагам, как в черновике: каждый шаг «думает», потом показывает результат ----- */
   var REDUCE = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   var STATUS = AUDIENCE === "vendor"
     ? { idle: "Новый запрос", run: "Платформа разбирает запрос", done: "ТКП готово к отправке" }
     : { idle: "Готов к работе", run: "Разбираю задачу", done: "Подбор готов" };
+  var MATCH = {
+    press: /ткан|пресс|шайб|вырубн|штамп/i,
+    pallet: /паллет|палет|поддон|мешк|короб|упаков/i,
+    cnc: /станк|станок|чпу|заготов|токар|фрезер|обработ/i
+  };
   var token = 0;
 
   function setStatus(state) {
@@ -135,50 +140,12 @@
     if (sub) { h.appendChild(document.createTextNode(" ")); h.appendChild(el("span", "sub2", sub)); }
     root.appendChild(h); root.appendChild(el("p", "doing", doing));
     var bd = el("div", "bd"); bd.appendChild(body); root.appendChild(bd);
-    return { root: root, num: num, n: n };
-  }
-  function quote(src, text) {
-    var q = el("p", "quote-task"); q.appendChild(el("small", null, src));
-    var tx = el("span", "qt-tx", text); q.appendChild(tx);
-    return { root: q, tx: tx, text: text };
+    return { root: root, num: num };
   }
   function frag(nodes) { var f = el("div"); nodes.forEach(function (n) { if (n) f.appendChild(n); }); return f; }
-
-  function play(out, q, stages, tail, animate) {
-    var my = ++token;
-    out.innerHTML = "";
-    out.appendChild(q.root);
-    stages.forEach(function (s) { out.appendChild(s.root); stagger(s.root); });
-    function finish(s) {
-      s.root.className = "stg ok"; s.num.textContent = "✓";
-      $$(".bar span", s.root).forEach(function (b) { b.style.width = b.getAttribute("data-w") + "%"; });
-    }
-    function showTail() { if (tail) { tail.classList.add("demo-tail"); out.appendChild(tail); } }
-    if (animate === "pending") { setStatus("idle"); return; }
-    if (!animate || REDUCE) {
-      stages.forEach(finish); showTail(); setStatus("done"); return;
-    }
-    setStatus("run");
-    (async function () {
-      q.root.classList.add("typing"); q.tx.textContent = "";
-      for (var c = 0; c < q.text.length; c += 3) {
-        if (my !== token) return;
-        q.tx.textContent = q.text.slice(0, c + 3);
-        await wait(14);
-      }
-      q.root.classList.remove("typing");
-      var pause = [950, 1300, 950, 850];
-      for (var i = 0; i < stages.length; i++) {
-        if (my !== token) return;
-        stages[i].root.className = "stg busy";
-        await wait(pause[i] || 900);
-        if (my !== token) return;
-        finish(stages[i]);
-        await wait(180);
-      }
-      if (my !== token) return;
-      showTail(); setStatus("done");
-    })();
+  function finish(s) {
+    s.root.className = "stg ok"; s.num.textContent = "✓";
+    $$(".bar span", s.root).forEach(function (b) { b.style.width = b.getAttribute("data-w") + "%"; });
   }
 
   function optList(list, vendor) {
@@ -197,66 +164,119 @@
     return ul;
   }
 
-  function renderPlant(out, k, animate) {
-    if (k === "other") {
-      ++token; out.innerHTML = ""; setStatus("idle");
-      out.appendChild(plaque("Вашей задачи нет среди примеров?",
-        "Это нормально: пример лишь показывает формат. Отправьте свою задачу: подберём оборудование и вендоров вручную и пришлём результат за 1 рабочий день.",
-        "Отправить мою задачу"));
-      out.firstChild.style.marginTop = "0";
-      return;
+  function buildStages(k) {
+    if (AUDIENCE === "vendor") {
+      var dv = VENDOR[k], files = el("ul", "files");
+      [["description", "ТЗ в PDF"], ["request_quote", "ТКП по вашему шаблону"], ["link", "Источники по каждой цифре"]].forEach(function (f) {
+        var li = el("li"); li.appendChild(el("span", "ic", f[0])); li.appendChild(document.createTextNode(f[1])); files.appendChild(li);
+      });
+      return { stages: [
+        stage(1, "ТЗ: параметры извлечены автоматически", null, "Разбираю запрос клиента и составляю ТЗ", params(dv.params)),
+        stage(2, "Подобрано из вашего каталога", null, "Ищу подходящие позиции в вашем каталоге", optList(dv.opts, true)),
+        stage(3, "Обоснование для клиента", null, "Считаю стоимость, сроки и окупаемость", econ(dv, "")),
+        stage(4, "Готово к отправке", null, "Собираю ТКП по вашему шаблону", files)
+      ], tail: null };
     }
-    var d = PLANT[k];
-    var vl = el("ul", "vend");
+    var d = PLANT[k], vl = el("ul", "vend");
     d.vendors.forEach(function (v) {
       var li = el("li"); li.appendChild(el("span", "ic", "handshake"));
       var s = el("span"); s.appendChild(el("b", null, v[0])); s.appendChild(el("span", "w", v[1])); li.appendChild(s); vl.appendChild(li);
     });
-    var stages = [
+    return { stages: [
       stage(1, "Что мы поняли из описания", null, "Извлекаю операцию, массу, темп и ограничения", params(d.params)),
       stage(2, "3 варианта от разных производителей", null, "Сравниваю каталоги производителей по требованиям", optList(d.opts, false)),
       stage(3, "Кто поставит и внедрит", "· по номенклатуре, референсам и региону", "Ищу вендоров и интеграторов с похожими проектами", vl),
       stage(4, "Стоимость и окупаемость", null, "Считаю бюджет под ключ, сроки и окупаемость", frag([econ(d, "pay"), el("p", "note", d.note + " Это пример. По вашей задаче подберём точно.")]))
-    ];
-    play(out, quote("Задача словами производства", d.text), stages,
-      plaque("Хотите такой же подбор по вашей задаче?", "Оборудование и вендоры за 1 рабочий день, бесплатно", "Подобрать оборудование"), animate);
+    ], tail: plaque("Хотите такой же подбор по вашей задаче?", "Оборудование и вендоры за 1 рабочий день, бесплатно", "Подобрать оборудование") };
   }
 
-  function renderVendor(out, k, animate) {
-    var d = VENDOR[k];
-    var files = el("ul", "files");
-    [["description", "ТЗ в PDF"], ["request_quote", "ТКП по вашему шаблону"], ["link", "Источники по каждой цифре"]].forEach(function (f) {
-      var li = el("li"); li.appendChild(el("span", "ic", f[0])); li.appendChild(document.createTextNode(f[1])); files.appendChild(li);
+  function setChips() {
+    $$("#chips .chip").forEach(function (b) {
+      var on = b.getAttribute("data-k") === current;
+      b.classList.toggle("on", on); b.setAttribute("aria-pressed", String(on));
     });
-    var stages = [
-      stage(1, "ТЗ: параметры извлечены автоматически", null, "Разбираю запрос клиента и составляю ТЗ", params(d.params)),
-      stage(2, "Подобрано из вашего каталога", null, "Ищу подходящие позиции в вашем каталоге", optList(d.opts, true)),
-      stage(3, "Обоснование для клиента", null, "Считаю стоимость, сроки и окупаемость", econ(d, "")),
-      stage(4, "Готово к отправке", null, "Собираю ТКП по вашему шаблону", files)
-    ];
-    play(out, quote(d.src, d.text), stages, null, animate);
   }
 
-  function renderDemo(animate) {
+  /* mode: "pending" — шаги видны и ждут; "instant" — сразу результат; "type" — впечатать пример и разобрать; "run" — разобрать текст из поля */
+  function run(k, mode, matched) {
+    var my = ++token, out = $("#demo-out"), ta = $("#demo-task"), btn = $("#demo-run");
+    current = k; setChips();
+    var text = DATA[k].text, built = buildStages(k);
+    out.innerHTML = "";
+    if (matched) out.appendChild(el("p", "note match", "Похожий пример из демо: " + DATA[k].label + ". По вашей задаче подберём точно."));
+    built.stages.forEach(function (s) { out.appendChild(s.root); stagger(s.root); });
+    function done() {
+      if (built.tail) { built.tail.classList.add("demo-tail"); out.appendChild(built.tail); }
+      setStatus("done"); if (btn) btn.disabled = false;
+    }
+    if (mode !== "run" && ta) ta.value = text;
+    if (mode === "pending") { setStatus("idle"); return; }
+    if (mode === "instant" || REDUCE) { built.stages.forEach(finish); done(); return; }
+    setStatus("run"); if (btn) btn.disabled = true;
+    (async function () {
+      if (mode === "type" && ta) {
+        ta.classList.add("typing"); ta.value = "";
+        for (var c = 0; c < text.length; c += 3) { if (my !== token) return; ta.value = text.slice(0, c + 3); await wait(14); }
+        ta.classList.remove("typing");
+      }
+      var pause = [950, 1300, 950, 850];
+      for (var i = 0; i < built.stages.length; i++) {
+        if (my !== token) return;
+        built.stages[i].root.className = "stg busy";
+        await wait(pause[i]);
+        if (my !== token) return;
+        finish(built.stages[i]);
+        await wait(180);
+      }
+      if (my === token) done();
+    })();
+  }
+
+  function miss(text) {
+    ++token; current = null; setChips(); setStatus("idle");
+    var out = $("#demo-out"), btn = $("#demo-run"); if (btn) btn.disabled = false;
+    out.innerHTML = "";
+    var box = AUDIENCE === "vendor"
+      ? plaque("Этого запроса нет среди примеров демо", "На пилоте платформа разберёт любой запрос ваших клиентов по вашему каталогу.", "Запустить бесплатный пилот")
+      : plaque("Этой задачи нет среди примеров демо", "Отправьте её нам: подберём оборудование и вендоров и пришлём результат за 1 рабочий день, бесплатно.", "Отправить мою задачу");
+    box.style.marginTop = "0"; out.appendChild(box);
+    var formTask = $("#lead-form textarea[name=task]");
+    if (formTask && !formTask.value) formTask.value = text;
+  }
+
+  function analyze() {
+    var ta = $("#demo-task"), text = ta ? ta.value.trim() : "";
+    if (!text) { if (ta) { ta.focus(); ta.classList.add("bad"); } return; }
+    goal("demo_run", { audience: AUDIENCE });
+    for (var i = 0; i < KEYS.length; i++) if (text === DATA[KEYS[i]].text) { run(KEYS[i], "run", false); return; }
+    for (var j = 0; j < KEYS.length; j++) if (MATCH[KEYS[j]].test(text)) { run(KEYS[j], "run", true); return; }
+    miss(text);
+  }
+
+  function renderDemo() {
     var box = $("#chips"), out = $("#demo-out");
-    if (!box || !out) return;
+    if (!box || !out) return false;
     box.innerHTML = "";
     KEYS.forEach(function (k) {
-      var b = el("button", "chip" + (k === current ? " on" : ""), k === "other" ? "Моя задача другая" : DATA[k].label);
-      b.type = "button"; b.setAttribute("aria-pressed", String(k === current));
-      b.addEventListener("click", function () { current = k; renderDemo(true); goal("demo_preset", { preset: k, audience: AUDIENCE }); });
+      var b = el("button", "chip", DATA[k].label);
+      b.type = "button"; b.setAttribute("data-k", k);
+      b.addEventListener("click", function () { run(k, "type", false); goal("demo_preset", { preset: k, audience: AUDIENCE }); });
       box.appendChild(b);
     });
-    if (AUDIENCE === "vendor") renderVendor(out, current, animate); else renderPlant(out, current, animate);
+    var rb = $("#demo-run"), ta = $("#demo-task");
+    if (rb) rb.addEventListener("click", analyze);
+    if (ta) ta.addEventListener("keydown", function (e) { if ((e.ctrlKey || e.metaKey) && e.key === "Enter") analyze(); });
+    if (ta) ta.addEventListener("input", function () { ta.classList.remove("bad"); });
+    return true;
   }
 
-  /* Первый показ: шаги видны, а «разбор» запускается, когда демо появляется на экране */
+  /* Первый показ: пример уже в поле, шаги видны; разбор запускается, когда демо появляется на экране */
   (function () {
-    var demo = $("#demo"); if (!demo) return;
-    if (REDUCE || !("IntersectionObserver" in window)) { renderDemo(false); return; }
-    renderDemo("pending");
+    var demo = $("#demo"); if (!demo || !renderDemo()) return;
+    if (REDUCE || !("IntersectionObserver" in window)) { run("press", "instant"); return; }
+    run("press", "pending");
     var io = new IntersectionObserver(function (en) {
-      if (en.some(function (e) { return e.isIntersecting; })) { io.disconnect(); renderDemo(true); }
+      if (en.some(function (e) { return e.isIntersecting; })) { io.disconnect(); if (current === "press" && token === 1) run("press", "run"); }
     }, { threshold: 0.35 });
     io.observe(demo);
   })();
