@@ -496,3 +496,23 @@ name@company.ru || name@company.com
 Страйтег || Страйтег
 СтрАИтег || СтрАИтег
 Стр AI тег || Стр AI тег
+4 ч || 4 h
+5 тыс. ₽ || ₽5,000
++20% за год || +20% per year
+Ситуация на рынке и партнёры || Market situation and partners
+Ситуация на рынке || Market situation
+Запросы сложнее, заявки дороже, до контракта доходят единицы || Requests are harder, leads cost more, few reach a contract
+Производства приходят с задачами языком цеха, без параметров оборудования. Каждый такой запрос инженер вендора разбирает часами, входящая заявка дорожает с каждым годом, а до контракта доходит лишь малая часть обращений, и сделка тянется месяцами. Выигрывает тот, кто первым отвечает клиенту готовым ТЗ и обоснованным ТКП. || Manufacturers come with tasks in shop-floor language, with no equipment parameters. A vendor's engineer spends hours decoding each request, inbound leads get more expensive every year, only a small share of inquiries reach a contract, and deals take months. The winner is whoever answers the customer first with a ready spec and a well-justified proposal.
+МИНПРОМТОРГ || MINPROMTORG
+России || of Russia
+Министерство промышленности и торговли Российской Федерации || Ministry of Industry and Trade of the Russian Federation
+МТПП || MCCI
+Московская торгово- || Moscow Chamber of
+промышленная палата || Commerce and Industry
+Московская торгово-промышленная палата || Moscow Chamber of Commerce and Industry
+РАНХиГС || RANEPA
+при Президенте || under the President
+Российской Федерации || of the Russian Federation
+Российская академия народного хозяйства и государственной службы при Президенте РФ || Russian Presidential Academy of National Economy and Public Administration
+Корпорация развития || Development Corporation
+Нижегородской области || Nizhny Novgorod Region
