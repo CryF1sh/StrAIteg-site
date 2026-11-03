@@ -300,7 +300,8 @@ h1.h em{font-style:normal;color:#FF8500}
 .pl-row{flex-direction:row;align-items:center;justify-content:flex-start;gap:10px}
 .pl-a{font-weight:800;font-size:15px;letter-spacing:.02em}
 .pl-xl{font-size:22px;letter-spacing:.01em}
-.pl-lat{letter-spacing:.16em}
+.pl-lat{letter-spacing:.06em}
+.pl-xl.pl-lat{font-size:23px}
 .pl-b{font-weight:500;font-size:10.5px;letter-spacing:.02em;color:inherit;opacity:.8}
 .pl-row .pl-b{border-left:1px solid #545C6E;padding-left:10px}
 .pl-up{text-transform:uppercase;letter-spacing:.12em;font-size:9.5px;font-weight:600}

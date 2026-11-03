@@ -522,3 +522,8 @@ amoSTART · сертификат || amoSTART · certificate
 Сертификат || Certificate
 Закрыть || Close
 Сертификат официального партнёра программы amoSTART компании amoCRM, выдан ООО «Архада» || amoCRM amoSTART official partner certificate issued to Arkhada LLC
+Министерство промышленности, торговли и предпринимательства Нижегородской области || Ministry of Industry, Trade and Entrepreneurship of the Nizhny Novgorod Region
+Нижегородской || Nizhny Novgorod
+области || Region
+КОРПОРАЦИЯ || DEVELOPMENT
+развития || Corporation of the
