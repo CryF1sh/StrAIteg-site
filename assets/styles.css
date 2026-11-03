@@ -185,6 +185,7 @@ footer.ft{border-top:1px solid #383A55;background:#1D1E2E;padding:40px 0 48px;co
 footer.ft .wrap{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);gap:24px}
 footer.ft a{color:#E5E9EC}
 footer.ft p{margin:0 0 6px}
+footer.ft .brand-alt{font-size:12px;color:#98A2B3;margin-top:10px}
 .vend{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .vend li{display:flex;gap:12px;align-items:flex-start;background:#292B40;border-radius:10px;padding:10px 14px;font-size:14px}
 .vend .ic{color:#FF8500;margin-top:1px}

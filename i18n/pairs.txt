@@ -491,3 +491,8 @@ SCARA, 6 кг, вылет 600 мм || SCARA, 6 kg, 600 mm reach
 name@company.ru || name@company.com
 Язык || Language
 0 ₽ || $0
+СтрAIтег (Стратег, Страйтег, StrAItegist) — ИИ-платформа подбора промышленного оборудования || StrAItegist (СтрAIтег, Straitegist) — AI platform for industrial equipment selection
+Стратег || Стратег
+Страйтег || Страйтег
+СтрАИтег || СтрАИтег
+Стр AI тег || Стр AI тег
