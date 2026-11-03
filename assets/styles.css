@@ -420,3 +420,32 @@ h1.h{font-size:30px}
 @media (prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
 }
+
+/* ===================== Анимации прокрутки (assets/motion.js) ===================== */
+/* Линия процесса справа вместо полосы прокрутки */
+html.has-rail{scrollbar-width:none}
+html.has-rail::-webkit-scrollbar{display:none}
+.rail{position:fixed;right:max(10px,env(safe-area-inset-right,0px));top:96px;bottom:28px;width:28px;z-index:15;cursor:pointer;touch-action:none;-webkit-user-select:none;user-select:none}
+.rail-track{position:absolute;left:13px;top:0;bottom:0;width:2px;border-radius:2px;background:repeating-linear-gradient(to bottom,#545C6E 0 4px,transparent 4px 8px)}
+.rail-fill{position:absolute;left:0;top:0;width:2px;border-radius:2px;background:#FF8500;box-shadow:0 0 8px rgba(255,133,0,.55);overflow:hidden}
+.rail-fill:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 16px,rgba(255,236,210,.95) 16px 21px);background-size:100% 42px;animation:rail-flow 1.1s linear infinite}
+@keyframes rail-flow{to{background-position:0 42px}}
+.rail-head{position:absolute;left:14px;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,133,0,.35),0 0 14px #FF8500;cursor:grab;z-index:2;transition:transform .15s}
+.rail-head:focus-visible{outline:2px solid #FF8500;outline-offset:4px}
+.rail.drag .rail-head{cursor:grabbing;transform:scale(1.3)}
+.rail-tip{position:absolute;right:22px;top:50%;transform:translateY(-50%);white-space:nowrap;font:600 11px/1 Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(29,30,46,.94);border:1px solid rgba(255,133,0,.55);border-radius:999px;padding:6px 11px;opacity:0;transition:opacity .35s;pointer-events:none}
+.rail.moving .rail-tip,.rail.drag .rail-tip,.rail-head:focus-visible .rail-tip{opacity:1}
+.rail-node{position:absolute;left:14px;width:20px;height:20px;margin:-10px 0 0 -10px;padding:0;border:0;background:none;cursor:pointer;z-index:1}
+.rail-node i{position:absolute;inset:5px;border-radius:50%;background:#292B40;border:2px solid #545C6E;transition:background-color .3s,border-color .3s,box-shadow .3s}
+.rail-node.on i{background:#FF8500;border-color:#FF8500}
+.rail-node.cur i{box-shadow:0 0 0 4px rgba(255,133,0,.2)}
+.rail-node span{position:absolute;right:24px;top:50%;transform:translateY(-50%);white-space:nowrap;font:600 11px/1 Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#E5E9EC;background:rgba(29,30,46,.94);border:1px solid #545C6E;border-radius:999px;padding:6px 11px;opacity:0;transition:opacity .2s;pointer-events:none}
+.rail-node:hover span,.rail-node:focus-visible span{opacity:1}
+.rail-node:focus-visible{outline:none}
+.rail-node:focus-visible i{border-color:#fff}
+.rail.moving .rail-node.cur span{opacity:0}
+/* Инженерный чертёж на фоне */
+canvas.bp{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+html.has-bp .pg{background:transparent;position:relative;z-index:1}
+html.has-bp section.alt,html.has-bp .proof{background:rgba(29,30,46,.55)}
+@media (prefers-reduced-motion:reduce){.rail-fill:after{animation:none}}
