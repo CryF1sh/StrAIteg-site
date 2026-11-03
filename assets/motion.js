@@ -101,7 +101,7 @@
     function ease(x) { x = clamp(x, 0, 1); return x * x * x * (x * (x * 6 - 15) + 10); } /* плавный старт и остановка */
     function lerp(a, b, t) { return a + (b - a) * t; }
     function mono(px, w) { ctx.font = (w || 400) + " " + px + "px Montserrat, system-ui, sans-serif"; }
-    function label(t, x, y, c) { mono(11, 600); ctx.fillStyle = c || "rgba(229,233,236,.8)"; ctx.fillText(t, x, y); }
+    function label(t, x, y, c) { mono(10, 600); ctx.fillStyle = c || "rgba(229,233,236,.8)"; ctx.fillText(t, x, y); }
 
     /* Траектория захвата за один цикл: опуститься к заготовке → перенести к прессу → подняться → вернуться пустым */
     function tipAt(f, A, Bk, h0, lift) {
@@ -121,12 +121,6 @@
     }
     function draw() {
       ctx.clearRect(0, 0, W, H);
-      /* сетка чертежа, сдвигается за сглаженной прокруткой */
-      var oy = -((s * 0.18) % 100);
-      ctx.lineWidth = 1;
-      for (var gx = 0; gx < W; gx += 20) { ctx.strokeStyle = gx % 100 === 0 ? "rgba(152,162,179,.085)" : "rgba(152,162,179,.035)"; ctx.beginPath(); ctx.moveTo(gx + .5, 0); ctx.lineTo(gx + .5, H); ctx.stroke(); }
-      for (var gy = oy, i = 0; gy < H; gy += 20, i++) { ctx.strokeStyle = i % 5 === 0 ? "rgba(152,162,179,.085)" : "rgba(152,162,179,.035)"; ctx.beginPath(); ctx.moveTo(0, gy + .5); ctx.lineTo(W, gy + .5); ctx.stroke(); }
-
       var sc = clamp(H / 900, 0.7, 1.05), bx = W - 110 * sc - 44, by = H - 70 * sc;
       var L1 = 175 * sc, L2 = 150 * sc, L3 = 44 * sc, ph = 10 * sc, pw = 26 * sc;
       var sh = { x: bx, y: by - 44 * sc };
@@ -142,7 +136,17 @@
       var el = { x: sh.x + L1 * Math.cos(q1), y: sh.y + L1 * Math.sin(q1) }, wr = { x: el.x + L2 * Math.cos(q1 - q2), y: el.y + L2 * Math.sin(q1 - q2) };
       var tip = { x: wr.x, y: wr.y + L3 };
 
-      ctx.globalAlpha = W < 1100 ? 0.4 : 0.62;
+      /* сетка чертежа только вокруг робота и с плавным затуханием, чтобы не шуметь по всей странице */
+      var gcx = bx - 170 * sc, gcy = by - 150 * sc, gr = 470 * sc, step = 24 * sc, oy = -((s * 0.12) % step);
+      ctx.save(); ctx.lineWidth = 1;
+      for (var gx = Math.floor((gcx - gr) / step) * step; gx < gcx + gr; gx += step) { ctx.strokeStyle = Math.round(gx / step) % 4 === 0 ? "rgba(152,162,179,.10)" : "rgba(152,162,179,.045)"; ctx.beginPath(); ctx.moveTo(gx + .5, gcy - gr); ctx.lineTo(gx + .5, gcy + gr); ctx.stroke(); }
+      for (var gy = Math.floor((gcy - gr) / step) * step + oy; gy < gcy + gr; gy += step) { ctx.strokeStyle = Math.round((gy - oy) / step) % 4 === 0 ? "rgba(152,162,179,.10)" : "rgba(152,162,179,.045)"; ctx.beginPath(); ctx.moveTo(gcx - gr, gy + .5); ctx.lineTo(gcx + gr, gy + .5); ctx.stroke(); }
+      var fade = ctx.createRadialGradient(gcx, gcy, gr * 0.15, gcx, gcy, gr);
+      fade.addColorStop(0, "rgba(0,0,0,1)"); fade.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.globalCompositeOperation = "destination-in"; ctx.fillStyle = fade; ctx.fillRect(0, 0, W, H);
+      ctx.restore();
+
+      var BA = W < 1100 ? 0.3 : 0.5; ctx.globalAlpha = BA;
       /* стол, конвейер заготовок, пресс */
       ctx.strokeStyle = "rgba(152,162,179,.7)";
       ctx.beginPath(); ctx.moveTo(bx - 370 * sc, by + .5); ctx.lineTo(bx + 70 * sc, by + .5); ctx.stroke();
@@ -165,17 +169,15 @@
       for (var n = 0; n < placed; n++) ctx.fillRect(B0.x - pw / 2, B0.y - n * ph + 1, pw, ph - 2);
       if (t.carry) ctx.fillRect(tip.x - pw / 2, tip.y + 1, pw, ph - 2);
       else if (f < 0.12) ctx.fillRect(A.x - pw / 2, A.y + 1, pw, ph - 2);
-      else if (f >= 0.62 && k < CYC - 1) { var slide = ease((f - 0.62) / 0.38); ctx.globalAlpha *= slide; ctx.fillRect(A.x - pw / 2 - (1 - slide) * 50 * sc, A.y + 1, pw, ph - 2); ctx.globalAlpha = W < 1100 ? 0.4 : 0.62; }
+      else if (f >= 0.62 && k < CYC - 1) { var slide = ease((f - 0.62) / 0.38); ctx.globalAlpha *= slide; ctx.fillRect(A.x - pw / 2 - (1 - slide) * 50 * sc, A.y + 1, pw, ph - 2); ctx.globalAlpha = BA; }
       /* суставы */
       [sh, el, wr].forEach(function (j) { ctx.beginPath(); ctx.arc(j.x, j.y, 5 * sc + 2, 0, 6.283); ctx.fillStyle = "#1D1E2E"; ctx.fill(); ctx.strokeStyle = "#FF8500"; ctx.lineWidth = 2; ctx.stroke(); });
       ctx.lineWidth = 1;
       /* размеры и подписи */
       var d1 = Math.round(-q1 * 180 / Math.PI), d2 = Math.round(q2 * 180 / Math.PI);
       ctx.strokeStyle = "rgba(255,133,0,.65)"; ctx.beginPath(); ctx.arc(sh.x, sh.y, 30 * sc, Math.min(0, q1), Math.max(0, q1)); ctx.stroke();
-      label("θ1 " + d1 + "°", sh.x + 14 * sc, sh.y + 30 * sc, "#FF8500");
-      label("θ2 " + d2 + "°", el.x + 14, el.y - 12, "#FF8500");
-      ctx.strokeStyle = "rgba(52,211,153,.75)"; ctx.beginPath(); ctx.moveTo(tip.x - 18, tip.y + 20 * sc); ctx.lineTo(tip.x + 18, tip.y + 20 * sc); ctx.moveTo(tip.x, tip.y + 2); ctx.lineTo(tip.x, tip.y + 38 * sc); ctx.stroke();
-      label("X " + Math.round((tip.x - bx) / sc * 2.5) + "  Y " + Math.round((by - tip.y) / sc * 2.5), tip.x + 22, tip.y + 24 * sc, "#34D399");
+      label("θ1 " + d1 + "°", sh.x + 14 * sc, sh.y + 30 * sc, "rgba(255,133,0,.8)");
+      label("θ2 " + d2 + "°", el.x + 14, el.y - 12, "rgba(255,133,0,.8)");
       label("SCARA · 6 " + (EN ? "kg" : "кг") + " · ±0,02 " + (EN ? "mm" : "мм") + " · " + (EN ? "parts " : "деталей ") + placed + "/" + CYC, bx - 370 * sc, by + 38 * sc, "rgba(152,162,179,.85)");
       ctx.globalAlpha = 1;
     }
