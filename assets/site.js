@@ -190,6 +190,19 @@
     d.addEventListener("toggle", function () { if (d.open) goal("faq_open", { q: d.querySelector("summary").textContent }); });
   });
 
+  /* ===================== Просмотр сертификата партнёра ===================== */
+  (function () {
+    var dlg = $("#lightbox"); if (!dlg || typeof dlg.showModal !== "function") return;
+    var img = dlg.querySelector("img");
+    $$("a[data-lightbox]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault(); img.src = a.getAttribute("href"); dlg.showModal(); goal("partner_cert_open");
+      });
+    });
+    dlg.querySelector(".lb-x").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+  })();
+
   /* ===================== Мобильное меню ===================== */
   $$(".burger .menu a").forEach(function (a) {
     a.addEventListener("click", function () { var b = a.closest(".burger"); if (b) b.open = false; });

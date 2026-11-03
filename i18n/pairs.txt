@@ -516,3 +516,9 @@ name@company.ru || name@company.com
 Российская академия народного хозяйства и государственной службы при Президенте РФ || Russian Presidential Academy of National Economy and Public Administration
 Корпорация развития || Development Corporation
 Нижегородской области || Nizhny Novgorod Region
+Сертификат официального партнёра amoCRM || amoCRM official partner certificate
+Официальный партнёр || Official partner
+amoSTART · сертификат || amoSTART · certificate
+Сертификат || Certificate
+Закрыть || Close
+Сертификат официального партнёра программы amoSTART компании amoCRM, выдан ООО «Архада» || amoCRM amoSTART official partner certificate issued to Arkhada LLC

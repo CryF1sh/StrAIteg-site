@@ -292,10 +292,12 @@ h1.h em{font-style:normal;color:#FF8500}
 
 /* ---------- Логотипы партнёров ---------- */
 .trust small{width:100%}
-.plogos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 28px;width:100%}
+.plogos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:22px 32px;width:100%}
+@media (max-width:1000px){.plogos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.plogos{grid-template-columns:1fr}}
 .pl{display:flex;flex-direction:column;justify-content:center;color:#C3C8D2;line-height:1.1;opacity:.85;transition:opacity .2s,color .2s;cursor:default}
 .pl:hover{opacity:1;color:#fff}
-.pl-row{flex-direction:row;align-items:center;gap:10px}
+.pl-row{flex-direction:row;align-items:center;justify-content:flex-start;gap:10px}
 .pl-a{font-weight:800;font-size:15px;letter-spacing:.02em}
 .pl-xl{font-size:22px;letter-spacing:.01em}
 .pl-lat{letter-spacing:.16em}
@@ -305,6 +307,18 @@ h1.h em{font-style:normal;color:#FF8500}
 .pl .pl-b + .pl-a,.pl .pl-a + .pl-b{margin-top:3px}
 .pl-row .pl-a + .pl-b{margin-top:0}
 @media (max-width:640px){.plogos{gap:16px 28px}.pl-xl{font-size:19px}}
+.pl-link{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;border-radius:8px;outline-offset:6px}
+.pl-link:hover{color:#fff}
+.pl:has(.pl-link){cursor:pointer}
+.pl-amo{font-weight:700;letter-spacing:-.01em;text-transform:none}
+.pl-amo i{font-style:normal;color:#FF8500}
+/* Просмотр сертификата */
+dialog.lb{padding:0;border:0;background:transparent;max-width:min(92vw,1100px);max-height:92vh;overflow:visible}
+dialog.lb::backdrop{background:rgba(15,16,26,.82);backdrop-filter:blur(4px)}
+dialog.lb img{display:block;width:100%;height:auto;max-height:88vh;object-fit:contain;border-radius:14px;box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
+.lb-x{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:1px solid #545C6E;background:#1D1E2E;color:#fff;cursor:pointer;display:grid;place-items:center;z-index:1}
+.lb-x:hover{border-color:#FF8500;color:#FF8500}
+@media (max-width:640px){.lb-x{top:-48px;right:0}}
 
 /* ---------- Переключатель языка ---------- */
 .lang{display:inline-flex;gap:2px;padding:2px;border:1px solid #545C6E;border-radius:999px}
