@@ -148,7 +148,7 @@ grep -rn 'class="ph"' index.html vendors/index.html
 
 ### 4. Почта и политика
 
-Заведите ящик `info@straitegist.ru`. Он указан в контактах, футере и как запасной адрес при сбое формы.
+Почта для связи: `archadait@yandex.ru`. Она указана в контактах, футере, разметке schema.org, `llms.txt` и как запасной адрес при сбое формы (`assets/site.js`, `CONFIG.FALLBACK_EMAIL`).
 Текст `privacy/index.html` нужно подготовить по 152-ФЗ.
 
 ## Что ещё можно сделать

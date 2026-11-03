@@ -11,7 +11,7 @@
     // Номер счётчика Яндекс.Метрики задаётся в <head> каждой страницы: window.YM_ID
     METRIKA_ID: window.YM_ID || 0,
     // Запасной адрес, если отправка не удалась
-    FALLBACK_EMAIL: "info@straitegist.ru"
+    FALLBACK_EMAIL: "archadait@yandex.ru"
   };
 
   var LANG = (document.documentElement.lang || "ru").slice(0, 2) === "en" ? "en" : "ru";
