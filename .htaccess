@@ -52,7 +52,14 @@ RewriteRule ^(README\.md|SEO\.md|deploy/.*|i18n/.*|\.git(/.*)?|\.gitignore)$ - [
   <FilesMatch "\.(woff2|svg|png)$">
     Header set Cache-Control "public, max-age=604800"
   </FilesMatch>
-  <FilesMatch "\.(css|js)$">
+  <FilesMatch "\.(css|js|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml application/xml text/xml text/plain application/json application/ld+json
 </IfModule>
