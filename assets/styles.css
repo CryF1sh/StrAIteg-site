@@ -269,6 +269,9 @@ h1.h em{font-style:normal;color:#FF8500}
 [hidden]{display:none!important}
 /* Иконка не «разъезжается» текстом, пока шрифт иконок не загрузился */
 .ic{width:1em;height:1em;overflow:hidden;white-space:nowrap;flex:none}
+/* Пока шрифт иконок не загрузился, не показываем их текстовые названия */
+html.js:not(.ic-ok) .ic{color:transparent!important}
+.svg-ic{display:block}
 
 /* ---------- Шапка: пункты не переносятся на вторую строку ---------- */
 .top .wrap > *{flex:none}
